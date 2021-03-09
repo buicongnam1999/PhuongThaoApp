@@ -1,8 +1,10 @@
 ﻿using Dapper;
+using MySqlConnector;
 using PhuongThao.DataLayer.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,11 +13,11 @@ namespace PhuongThao.DataLayer.DataLayer
     public class DBConnect<T> : IDBConnect<T>
     {
 
-        public String _stringConnect = "";
+        public String _stringConnect = @"Data Source=DESKTOP-1BICBR5\SQLEXPRESS;Initial Catalog=PhuongThaoShop;Integrated Security=True";
         IDbConnection _dbConnect;
         public DBConnect()
         {
-            _dbConnect = new MySqlConnector.MySqlConnection(_stringConnect);
+            _dbConnect = new SqlConnection(_stringConnect);
         }
 
         /// <summary>
@@ -23,11 +25,15 @@ namespace PhuongThao.DataLayer.DataLayer
         /// </summary>
         /// <returns>Danh sách đối tượng cần lấy</returns>
         /// Create By: NamBC (07/03/21)
-        public Task<IEnumerable<T>> getAllData()
+        public IEnumerable<T> getAllData()
         {
+            _dbConnect.Open();
             String className = "tbl" + typeof(T).Name.ToLower();
             String sql = "SELECT * FROM " + className;
-            return (Task<IEnumerable<T>>)_dbConnect.Query<T>(sql, commandType: CommandType.Text);
+            /*_dbConnect.Close();*/
+            var list =  _dbConnect.Query<T>(sql, commandType: CommandType.Text);
+            _dbConnect.Close();
+            return list;
         }
 
         /// <summary>

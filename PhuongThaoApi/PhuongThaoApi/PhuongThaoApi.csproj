@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PhuongThao.Common\PhuongThao.Common.csproj" />
+    <ProjectReference Include="..\PhuongThao.Service\PhuongThao.Service.csproj" />
+  </ItemGroup>
+
 
 </Project>

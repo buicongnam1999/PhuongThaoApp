@@ -13,7 +13,7 @@ namespace PhuongThao.Service.interfaces
         /// </summary>
         /// <returns>Danh sách người dùng</returns>
         /// Create By: NamBC (08/03/21)
-        public Task<IEnumerable<T>> GetAllUser();
+        public IEnumerable<T> GetAllUser();
 
         /// <summary>
         /// Hàm thêm mới người dùng

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj": {}
+    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj": {
+    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj",
         "projectName": "PhuongThao.Common",
-        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj",
+        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj",
         "packagesPath": "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\obj\\",
+        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

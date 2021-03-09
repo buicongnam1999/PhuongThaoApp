@@ -18,3 +18,53 @@ C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debu
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.dll
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.pdb
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.genruntimeconfig.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.csprojAssemblyReference.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.AssemblyInfoInputs.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.AssemblyInfo.cs
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.csproj.CoreCompileInputs.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThaoApi.exe
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThaoApi.deps.json
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThaoApi.runtimeconfig.json
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThaoApi.runtimeconfig.dev.json
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThaoApi.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThaoApi.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Common.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Service.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Common.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Service.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\staticwebassets\PhuongThaoApi.StaticWebAssets.Manifest.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\staticwebassets\PhuongThaoApi.StaticWebAssets.xml
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\scopedcss\bundle\PhuongThaoApi.styles.css
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.RazorTargetAssemblyInfo.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.csproj.CopyComplete
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.genruntimeconfig.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Common.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Service.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Common.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Service.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.csproj.CopyComplete

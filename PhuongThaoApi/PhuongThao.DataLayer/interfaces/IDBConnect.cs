@@ -13,7 +13,7 @@ namespace PhuongThao.DataLayer.interfaces
         /// </summary>
         /// <returns>Danh sách đối tượng muốn lấy</returns>
         /// Create By: NamBC (07/03/21)
-        public Task<IEnumerable<T>> getAllData();
+        public IEnumerable<T> getAllData();
 
         /// <summary>
         /// Hàm thêm mới đối tượng

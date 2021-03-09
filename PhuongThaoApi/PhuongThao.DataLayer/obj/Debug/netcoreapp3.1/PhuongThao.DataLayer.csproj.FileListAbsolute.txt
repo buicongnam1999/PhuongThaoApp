@@ -1,0 +1,18 @@
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.deps.json
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.csprojAssemblyReference.cache
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.AssemblyInfoInputs.cache
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.AssemblyInfo.cs
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.deps.json
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.csprojAssemblyReference.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.AssemblyInfoInputs.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.AssemblyInfo.cs
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb

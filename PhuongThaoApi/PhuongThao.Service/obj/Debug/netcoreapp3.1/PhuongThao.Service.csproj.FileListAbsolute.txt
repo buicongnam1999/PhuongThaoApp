@@ -1,0 +1,18 @@
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.csprojAssemblyReference.cache
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.AssemblyInfoInputs.cache
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.AssemblyInfo.cs
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.csproj.CoreCompileInputs.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.csprojAssemblyReference.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.AssemblyInfoInputs.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.AssemblyInfo.cs
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.csproj.CoreCompileInputs.cache
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\bin\Debug\netcoreapp3.1\PhuongThao.Service.deps.json
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\bin\Debug\netcoreapp3.1\PhuongThao.Service.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\bin\Debug\netcoreapp3.1\PhuongThao.Service.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\bin\Debug\netcoreapp3.1\PhuongThao.Common.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\bin\Debug\netcoreapp3.1\PhuongThao.Common.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.csproj.CopyComplete
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.dll
+C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Service\obj\Debug\netcoreapp3.1\PhuongThao.Service.pdb

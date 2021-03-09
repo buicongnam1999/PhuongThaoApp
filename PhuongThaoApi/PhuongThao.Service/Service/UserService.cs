@@ -1,4 +1,5 @@
-﻿using PhuongThao.Service.interfaces;
+﻿using PhuongThao.DataLayer.DataLayer;
+using PhuongThao.Service.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,15 +10,23 @@ namespace PhuongThao.Service.Service
 {
     public class UserService<User> : IUserService<User>
     {
+        DBConnect<User> _dbConnection;
+
+        public UserService()
+        {
+            _dbConnection = new DBConnect<User>();
+        }
 
         /// <summary>
         /// Hàm lấy toàn bộ dữ liệu người dùng
         /// </summary>
         /// <returns>Danh sách người dùng</returns>
         /// Create By: NamBC (08/03/21)
-        public Task<IEnumerable<User>> GetAllUser()
+        public IEnumerable<User> GetAllUser()
         {
-            throw new NotImplementedException();
+            _dbConnection = new DBConnect<User>();
+            return _dbConnection.getAllData();
+
         }
 
         /// <summary>
