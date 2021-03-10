@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-      <div class="wrapper">
-          <the-header />
-          <the-content />
-          <the-footer />
-      </div>
+      <the-header />
+      <the-content />
+      <the-footer />
   </div>
 </template>
 
@@ -23,11 +21,11 @@ export default {
 
 <style>
 #app{
-  font-family: OpenSans;
-  font-size: 13px;
-  color: #fff;
+  /* font-family: OpenSans; */
+  width: 100%;
 }
-
-
-
+*{
+  margin: 0;
+  padding: 0;
+}
 </style>
