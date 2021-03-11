@@ -96,8 +96,13 @@
                                 <input type="text" name="" id="" placeholder="Your email address">
                             </div>
                             <div class="right-input-button">
-
+                                <div class="button-email">
+                                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                                </div>
                             </div>
+                        </div>
+                        <div class="right-text">
+                            Get E-mail updates about our latest shop and special offers.
                         </div>
                     </div>
                 </div>
@@ -116,6 +121,10 @@ export default {
 </script>
 
 <style scoped>
+
+/*
+-----------------------FOOTER-----------------------
+*/ 
 .footer{
     border-top: 1px solid #e5e5e5;
     width: 100%;
@@ -124,11 +133,20 @@ export default {
 .footer-content{
     padding: 90px 25px;
 }
+
+
+/*
+---------------FOOTER-TOP-------------
+*/ 
 .footer-content-top{
     display: flex;
     padding: 0px 25px;
 }
 
+
+/*
+---------------Common-----------------
+*/
 .footer-top-left,.footer-top-center,.footer-top-right{
     width: 33%;
 }
@@ -161,7 +179,17 @@ export default {
 }
 .footer-app i{
     padding-right: 25px;
+    cursor: pointer;
 }
+.footer-app i:hover{
+    color: red;
+    opacity: 1;
+}
+/*
+-------------FOOTER-LEFT-END-----------
+ */
+
+
 
 
 .footer-top-center{
@@ -192,13 +220,47 @@ export default {
     opacity: 0.9;
     font-size: 19px;
 }
+
+.right-input{
+    display: flex;
+    margin-top: 30px;
+}
 .right-input-text{
     height: 50px;
     width: 290PX;
+    background: rgba(40, 53, 62, 0.1);
+    border-radius: 3px;
 }
 .right-input-text input{
     outline: none;
     border: none;
-    font-size: 17px;
+    font-size: 15px;
+    background: none;
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+.button-email{
+    height: 50px;
+    width: 70px;
+    background: rgba(255, 0, 0, 0.8);
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 3px;
+    transition: visibility 0s, opacity 0.4s linear;
+}
+.button-email i{
+    color: white;
+    font-size: 25px;
+    line-height: 50px;
+    padding-left: 23px;
+}
+.button-email:hover{
+    background: black;
+    opacity: 0.8;
+}
+.right-text{
+    opacity: 0.9;
+    margin-top: 18px;
 }
 </style>

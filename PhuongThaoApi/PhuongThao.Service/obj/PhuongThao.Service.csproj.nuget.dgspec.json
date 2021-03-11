@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\PhuongThao.Service.csproj": {}
+    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\PhuongThao.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj": {
+    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj",
         "projectName": "PhuongThao.Common",
-        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj",
+        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj",
         "packagesPath": "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\obj\\",
+        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -61,14 +61,14 @@
         }
       }
     },
-    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj": {
+    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj",
         "projectName": "PhuongThao.DataLayer",
-        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj",
+        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj",
         "packagesPath": "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -132,14 +132,14 @@
         }
       }
     },
-    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\PhuongThao.Service.csproj": {
+    "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\PhuongThao.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\PhuongThao.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\PhuongThao.Service.csproj",
         "projectName": "PhuongThao.Service",
-        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\PhuongThao.Service.csproj",
+        "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\PhuongThao.Service.csproj",
         "packagesPath": "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\obj\\",
+        "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -159,11 +159,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj": {
-                "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj"
+              "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj": {
+                "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj"
               },
-              "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj"
+              "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.DataLayer\\PhuongThao.DataLayer.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R/1l0Vg5M/ZkmE0d1ng+O+WzZWbOy3K2CSN1FPLlc/sudrsCjiAN1yiSzmPRbt18sy83u8sw//V5ygUpzunj2Q==",
+  "dgSpecHash": "tqIEPBlXTb8/xk32WD5O2sJNaPqjOSykrzEHL8IiXapkU96pLXf8mHGdQvvn9uaRbEw1QlkgdOV5A3aDeuscKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\PhuongThao.Service.csproj",
+  "projectFilePath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\PhuongThao.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

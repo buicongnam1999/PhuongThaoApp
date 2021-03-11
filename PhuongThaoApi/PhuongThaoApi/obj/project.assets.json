@@ -647,11 +647,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThaoAPI\\PhuongThaoAPI.csproj",
-      "projectName": "PhuongThaoAPI",
-      "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThaoAPI\\PhuongThaoAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThaoApi\\PhuongThaoApi.csproj",
+      "projectName": "PhuongThaoApi",
+      "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThaoApi\\PhuongThaoApi.csproj",
       "packagesPath": "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThaoAPI\\obj\\",
+      "outputPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThaoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -671,11 +671,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj": {
-              "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Common\\PhuongThao.Common.csproj"
+            "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj": {
+              "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj"
             },
-            "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\PhuongThao.Service.csproj": {
-              "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoAPI\\PhuongThao.Service\\PhuongThao.Service.csproj"
+            "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\PhuongThao.Service.csproj": {
+              "projectPath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Service\\PhuongThao.Service.csproj"
             }
           }
         }

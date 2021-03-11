@@ -51,7 +51,44 @@
             </div>
         </div>
         <div class="header-menu">
-
+            <div class="header-menu-left">
+                <router-link class="menu-content-element" to="shopview">
+                    Home
+                </router-link>
+                <div class="menu-content-element">
+                    Shop
+                </div>
+                <div class="menu-content-down">
+                    Products
+                    <div class="menu-drop-down">
+                        <ul>
+                            <li>Snacks</li>
+                            <div class="border-bottom"></div>
+                            <li>Chicken</li>
+                            <div class="border-bottom"></div>
+                            <li>Drink</li>
+                            <div class="border-bottom"></div>
+                            <li>Fruit & Nut</li>
+                            <div class="border-bottom"></div>
+                            <li>Cakes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-content-element">
+                    Blog
+                </div>
+                <div class="menu-content-element">
+                    Contact
+                </div>
+            </div>
+            <div class="header-menu-right">
+                <div class="header-menu-search">
+                    <img src="../assets/icon/search-interface-symbol.svg" alt="" srcset="">
+                </div>
+                <div class="header-menu-cart">
+                    <img src="../assets/icon/shopping-cart.svg" alt="" srcset="">
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -75,6 +112,7 @@ export default {
 .header-top {
     display: flex;
     width: 100%;
+    border-bottom: 1px solid #e5e5ee;
 }
 
 .header-top-info, .header-top-setting{
@@ -197,7 +235,6 @@ export default {
 
 .language-dropdown{
     position: absolute;
-    top: 50px;
     z-index: 1;
     right: 37px;
     visibility: hidden; 
@@ -208,6 +245,7 @@ export default {
     list-style: none;
     color: black;
     width: 180px;
+    z-index: 1;
 }
 .language-dropdown ul li:hover{
     color: red;
@@ -219,6 +257,86 @@ export default {
     border: 1px ridge;
 }
 
+/*
+--------------------HEADER-MENU--------------------
+*/
+.header-menu{
+    display: flex;
+    height: 86px;
+}
+.header-menu-left, .header-menu-right{
+    margin-top: 15px;
+}
+
+/*
+-----------------MENU-LEFT-------------------
+*/
+.header-menu-left{
+    display: flex;
+    font-size: 20px;
+    opacity: 0.8;
+    width: 60%;
+    line-height: 86px;
+    padding-left: 300px;
+    justify-content: space-between;
+}
+.header-menu-left a{
+    text-decoration: none;
+    color: black;
+}
+.menu-content-down,.menu-content-element{
+    cursor: pointer;
+}
+.menu-content-element:hover{
+    color: red;
+}
+.menu-content-down:hover .menu-drop-down{
+    display: block;
+}
+
+.menu-drop-down{
+    display: none;
+    height: 202px;
+    justify-content: none;
+}
+.menu-drop-down ul{
+    justify-content: none;
+    background: rgba(240,248,255, 0.8);
+    width: 180px;
+    border-left: 5px solid #01b075;
+    cursor: pointer;
+    height: 202px;
+    display: block;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -10px;
+}
+ .menu-drop-down ul li{
+    list-style: none;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.menu-drop-down ul li:hover{
+    background: rgba(245,245,245, 0.8);
+    color: red;
+}
 
 
+.header-menu-right{
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 86px;
+    padding-right: 20px;
+}
+.header-menu-search img, .header-menu-cart img{
+    height: 25px;
+    width: 25px;
+    padding-right: 20px;
+    opacity: 0.8;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #e5e5ee;
+}
 </style>
