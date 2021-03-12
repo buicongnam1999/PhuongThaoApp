@@ -52,12 +52,12 @@
         </div>
         <div class="header-menu">
             <div class="header-menu-left">
-                <router-link class="menu-content-element" to="shopview">
+                <router-link class="menu-content-element" to="/">
                     Home
                 </router-link>
-                <div class="menu-content-element">
+                <router-link class="menu-content-element"  to="shopview">
                     Shop
-                </div>
+                </router-link>
                 <div class="menu-content-down">
                     Products
                     <div class="menu-drop-down">
@@ -74,9 +74,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="menu-content-element">
+                <router-link class="menu-content-element" to="">
                     Blog
-                </div>
+                </router-link>
                 <div class="menu-content-element">
                     Contact
                 </div>
@@ -238,6 +238,7 @@ export default {
     z-index: 1;
     right: 37px;
     visibility: hidden; 
+    top: 50px;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }

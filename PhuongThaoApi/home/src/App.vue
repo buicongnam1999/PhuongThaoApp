@@ -14,7 +14,7 @@ export default {
   components:{
     TheHeader,
     TheFooter,
-    TheContent
+    TheContent,
   }
 }
 </script>
@@ -23,6 +23,20 @@ export default {
 #app{
   /* font-family: OpenSans; */
   width: 100%;
+}::-webkit-scrollbar {
+    width: 8px !important;
+    height: 1px !important;
+    z-index: 1231232123421;
+}
+
+::-webkit-scrollbar-track {
+    width: 6px;
+    background-color: #bbb;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #808080;
+    border-radius: 8px;
 }
 *{
   margin: 0;

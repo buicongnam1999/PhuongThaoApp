@@ -126,6 +126,7 @@ export default {
 -----------------------FOOTER-----------------------
 */ 
 .footer{
+    margin-top: 100px;
     border-top: 1px solid #e5e5e5;
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
