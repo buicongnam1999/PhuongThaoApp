@@ -15,7 +15,7 @@ export default {
 .grid-content-element{
     margin: 0 27px 0 28px;
     height: 450px;
-    width: 270px;
+    width: 237px;
     float: left;
     font-size: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

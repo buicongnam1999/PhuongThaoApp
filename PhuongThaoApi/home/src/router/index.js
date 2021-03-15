@@ -30,7 +30,31 @@ const routes = [
     name: "login",
     component: ()=>
     import(/*Blog */ "../views/BlogView.vue")
-  }
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    component: ()=>
+    import(
+      /*Cart */ "../views/CartView.vue"
+    )
+  },
+  {
+    path: "/register",
+    name: "cart",
+    component: ()=>
+    import(
+      /*Cart */ "../views/RegisterView.vue"
+    )
+  },
+  {
+    path: "/login",
+    name: "cart",
+    component: ()=>
+    import(
+      /*Cart */ "../views/LoginView.vue"
+    )
+  },
 ]
 
 const router = new VueRouter({

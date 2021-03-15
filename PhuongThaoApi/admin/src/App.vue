@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-       <the-header />
+       <the-header @Logout="Logout"/>
        <the-side-bar />
        <the-content />
        <the-login :isHide="isHide" @CloseForm="CloseLogin"/>
@@ -25,6 +25,9 @@ export default {
   },
   methods: {
       CloseLogin: function() {
+          this.isHide = !this.isHide
+      },
+      Logout: function(){
           this.isHide = !this.isHide
       }
   },

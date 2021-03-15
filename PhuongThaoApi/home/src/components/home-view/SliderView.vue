@@ -1,71 +1,80 @@
 <template>
-    <div class="slider">
-        <!-- <div v-for="(image,index) in images" :key="index">
-            <img :src="img" alt="">
-        </div> -->
-        <div class="left-arrow">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
+   <div class="slider">
+     <transition name="left">
+     
+     </transition>
+        <div class="slider-view" v-for="(slider,index) in sliders" :key="index" v-show="visibleSlider === index">
+            <img :src="require(`../../assets/img/banner/food/${sliders[index]}`)" alt="" srcset="" width="100%" height="670px">
         </div>
-        <div class="right-arrow">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </div>
-        <img src="../../assets/img/banner/food/3-5.jpg" alt="" srcset="">
-    </div>
+        <button class="next" @click="next">Next</button>
+        <button class="prev" @click="prev">Prev</button>
+   </div>
 </template>
 
 <script>
 export default {
-    name: "Slider",
     data() {
-        return {
-            images: [
-                "../../../assets/img/banner/food/4-1.jpg",
-                "../../assets/img/banner/food/3-5.jpg"
-            ],
-            img: "../../assets/img/banner/food/3-5.jpg"
+      return {
+        sliders:[
+          '3-5.jpg',
+          '3-2.jpg',
+        ],
+        visibleSlider:0,
+      }
+    },
+    methods:{
+      next: function(){
+        if(this.visibleSlider >= this.sliderLen -1){
+          this.visibleSlider = 0;
+        }else{
+          this.visibleSlider++;
         }
+      },
+      prev: function(){
+        if(this.visibleSlider <= 0){
+          this.visibleSlider = this.sliderLen - 1;
+        }else{
+          this.visibleSlider--;
+        }
+      }
+    },
+    computed: {
+      sliderLen(){
+        return this.sliders.length
+      }
     },
 }
 </script>
+
 <style scoped>
 .slider{
-    min-height: 670px;
+    /* position: relative; */
     width: 100%;
-    margin-top: 35px;
+    height: 670px;
+    overflow: hidden;
 }
-.slider img{
-    width: 100%;
-    min-height: 670px;
+.slider-view{
+    animation: leftInAnimation 0.4s ease-in-out;
 }
-.slider:hover .left-arrow,.slider:hover .right-arrow{
-    display: block;
+button{
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 50px;
+  position: absolute;
+  top: calc(50%);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
-.left-arrow,.right-arrow{
-    position: absolute;
-    z-index: 1;
-    background: rgba(0,0,0, 0.4);
-    height: 45px;
-    width: 45px;
-    top: 500px;
-    opacity: 0.5;
-    cursor: pointer;
-    color: white;
-    font-size: 25px;
-    line-height: 45px;
-    display: none;
+button:active, button:hover{
+  outline: none;
+  border: none;
 }
-.left-arrow:hover,.right-arrow:hover{
-    background: red;
-    opacity: 0.4;
+.next{
+  right: 0;
 }
-.left-arrow{
-    left: 10px;
+.prev{
+  left: 0;
 }
-.right-arrow{
-    right: 10px;
-}
-.left-arrow i,.right-arrow i{
-    margin: 0px 18px;
-}
-
 </style>

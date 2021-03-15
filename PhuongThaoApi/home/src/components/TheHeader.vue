@@ -16,33 +16,15 @@
             </div>
             <div class="header-top-setting">
                 <div class="setting">
-                    Setting
+                    Cài đặt
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                     <div class="setting-dropdown">
                         <div class="setting-dropdown-content">
                             <ul>
-                                <li>My Account</li>
-                                <div style="border-top: 1px ridge;"></div>
-                                <li>Sign in</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="language">
-                    <img src="../assets/img/header/1.jpg" alt="" srcset="">
-                    English
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    <div class="language-dropdown">
-                        <div class="language-dropdown-content">
-                            <ul>
-                                <li style="border-bottom:1px solid ##F5F5F5">
-                                    <img src="../assets/img/header/1.jpg" alt="" srcset="">
-                                    English
-                                </li>
+                                <li>Tài khoản</li>
                                 <div style="border-top: 1px ridge;"></div>
                                 <li>
-                                    <img src="../assets/img/header/2.jpg" alt="" srcset="">
-                                    Francis
+                                    <router-link to="login">Đăng nhập</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -53,40 +35,46 @@
         <div class="header-menu">
             <div class="header-menu-left">
                 <router-link class="menu-content-element" to="/">
-                    Home
+                    Trang chủ
                 </router-link>
                 <router-link class="menu-content-element"  to="shopview">
-                    Shop
+                    Cửa hàng
                 </router-link>
                 <div class="menu-content-down">
-                    Products
+                    Sản phẩm
                     <div class="menu-drop-down">
                         <ul>
-                            <li>Snacks</li>
+                            <li>Đồ ăn nhanh</li>
                             <div class="border-bottom"></div>
-                            <li>Chicken</li>
+                            <li>Gà</li>
                             <div class="border-bottom"></div>
-                            <li>Drink</li>
+                            <li>Đồ uống</li>
                             <div class="border-bottom"></div>
-                            <li>Fruit & Nut</li>
+                            <li>Hoa quả</li>
                             <div class="border-bottom"></div>
-                            <li>Cakes</li>
+                            <li>Bánh ngọt</li>
                         </ul>
                     </div>
                 </div>
                 <router-link class="menu-content-element" to="">
-                    Blog
+                    Bài viết
                 </router-link>
                 <div class="menu-content-element">
-                    Contact
+                    Liên hệ
                 </div>
             </div>
             <div class="header-menu-right">
-                <div class="header-menu-search">
+                <div class="header-menu-search" @click="openSearch">
                     <img src="../assets/icon/search-interface-symbol.svg" alt="" srcset="">
+                        <div class="input-search">
+                        <input type="text" name="" id="" placeholder="Tìm kiếm...">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
                 </div>
                 <div class="header-menu-cart">
-                    <img src="../assets/icon/shopping-cart.svg" alt="" srcset="">
+                    <router-link to="cart">
+                        <img src="../assets/icon/shopping-cart.svg" alt="" srcset="">
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -160,12 +148,14 @@ export default {
 .header-top-logo{
     width: 10%;
     height: 30px;
-    padding: 15px;
+    margin-left: 10px;
     text-align: center;
+    margin-top: -15px;
 }
 .header-top-logo img{
-    width: 123px;
-    height: 30px;
+    width: 200px;
+    height: 75px;
+    cursor: pointer;
 }
 
 .header-top-setting{
@@ -196,7 +186,7 @@ export default {
 .setting-dropdown{
     position: absolute;
     top: 50px;
-    right: 140px;
+    right: 50px;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
@@ -213,8 +203,48 @@ export default {
     color: red;
     background: #f5f5f5;
 }
+.setting-dropdown-content a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+.setting-dropdown-content a:hover{
+    color: red;
+    opacity: 0.8;
+}
 
-.language img{
+.input-search{
+    position: absolute;
+    top: 138px;
+    right: 105px;
+    z-index: 1;
+    -webkit-box-shadow: 2px 2px 11px 0 rgb(0 0 0 / 30%);
+    box-shadow: 3px 2px 11px 0 rgb(0 0 0 / 30%);
+    height: 34px;
+    width: 250px;
+    background: rgba(255,255,255, 0.9);
+    display: none;
+}
+.input-search input{
+    margin-left: 5px;
+    border:none;
+    outline: none;
+    font-size: 15px;
+    height: 28px;
+    position: relative;
+    top: -26px;
+    width: 200px;
+    background: rgba(255,255,255, 0.8);
+    margin: 3px 5px;
+}
+.input-search i{
+    margin-left: 15px;
+    font-size: 15px;
+    position: relative;
+    top: -26px;
+    cursor: pointer;
+}
+/* .language img{
     height: 11px;
     padding-top: 15px;
     margin: 0px 5px 0px 20px;
@@ -256,7 +286,7 @@ export default {
 .language-dropdown-content , .setting-dropdown-content{
     margin-top: 10px;
     border: 1px ridge;
-}
+} */
 
 /*
 --------------------HEADER-MENU--------------------
@@ -285,6 +315,10 @@ export default {
     text-decoration: none;
     color: black;
 }
+/* .header-menu-left a:hover{
+    color: red;
+    opacity: 0.9;
+} */
 .menu-content-down,.menu-content-element{
     cursor: pointer;
 }
@@ -311,6 +345,7 @@ export default {
     position: absolute;
     margin-top: -25px;
     margin-left: -10px;
+    z-index: 5;
 }
  .menu-drop-down ul li{
     list-style: none;
@@ -322,21 +357,23 @@ export default {
     color: red;
 }
 
-
 .header-menu-right{
     width: 45%;
     display: flex;
     justify-content: flex-end;
     line-height: 86px;
-    padding-right: 20px;
+    margin-right: 30px;
 }
 .header-menu-search img, .header-menu-cart img{
     height: 25px;
     width: 25px;
     padding-right: 20px;
     opacity: 0.8;
+    cursor: pointer;
 }
-
+.header-menu-search:hover .input-search{
+    display: block;
+}
 .border-bottom{
     border-bottom: 1px solid #e5e5ee;
 }

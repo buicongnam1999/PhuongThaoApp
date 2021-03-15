@@ -75,6 +75,7 @@ export default {
     height: 80px;
     background-color: white;
     display: flex;
+    margin-left: 29px;
 }
 .grid-top-left{
     display: flex;

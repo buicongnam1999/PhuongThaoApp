@@ -27,7 +27,7 @@
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                         </div>
                         <div class="footer-address-text">
-                            Working time: 9.00 -21.00
+                            Thời gian làm việc: 9.00 - 21.00
                         </div>
                     </div>
                     <div class="footer-app">
@@ -42,45 +42,36 @@
                     <div class="footer-center-content">
                         <div class="content-products">
                             <div class="content-products-title">
-                                <b>Products</b>
+                                <b>Sản phẩm</b>
                             </div>
                             <div class="content-products-name">
                                 <div class="products-name">
-                                    Prices Drop
+                                    Giảm giá
                                 </div>
                                 <div class="products-name">
-                                    News products
+                                    Sản phẩm mới
                                 </div>
                                 <div class="products-name">
-                                    Best sale
+                                    Bán tốt nhất
                                 </div>
                                 <div class="products-name">
-                                    Term & Conditions
-                                </div>
-                                <div class="products-name">
-                                    Contact Us
+                                    Liên hệ
                                 </div>
                             </div>
                         </div>
                         <div class="content-company">
                             <div class="content-products-title">
-                                <b>Our Company</b>
+                                <b>Cửa hàng</b>
                             </div>
                             <div class="content-products-name">
                                 <div class="products-name">
-                                    Delivery
+                                    Thông tin cửa hàng
                                 </div>
                                 <div class="products-name">
-                                    About Us
+                                    Liên hệ
                                 </div>
                                 <div class="products-name">
-                                    Contact Us
-                                </div>
-                                <div class="products-name">
-                                    Sitemap
-                                </div>
-                                <div class="products-name">
-                                    Stores
+                                    Cửa hàng
                                 </div>
                             </div>
                         </div>
@@ -89,11 +80,11 @@
                 <div class="footer-top-right">
                     <div class="footer-right-content">
                         <div class="right-title">
-                            <b>Join Our Newsletter Now</b>
+                            <b>Đăng ký tin tức</b>
                         </div>
                         <div class="right-input">
                             <div class="right-input-text">
-                                <input type="text" name="" id="" placeholder="Your email address">
+                                <input type="text" name="" id="" placeholder="Địa chỉ Email">
                             </div>
                             <div class="right-input-button">
                                 <div class="button-email">
@@ -102,13 +93,10 @@
                             </div>
                         </div>
                         <div class="right-text">
-                            Get E-mail updates about our latest shop and special offers.
+                            Nhận thông tin khi có tin tức mới nhất của cửa hàng
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-content-bottom">
-
             </div>
         </div>
     </div>
@@ -152,11 +140,12 @@ export default {
     width: 33%;
 }
 .footer-logo{
-    padding-bottom: 25px;
+    padding-bottom: 5px;
 }
 .footer-logo img{
+    margin-top: -10px;
     width: 123px;
-    height: 30px;
+    height: 50px;
 }
 
 .footer-address, .footer-phone{

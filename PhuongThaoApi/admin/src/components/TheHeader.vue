@@ -27,10 +27,11 @@
                         Bùi Công Nam
                     </div>
                 </div>
-                <div class="info-setting"  @mouseleave="openDialog">
+                <div class="info-setting">
                     <img src="../assets/icon/i_arrow_up_small.svg" alt="" srcset="" @click="openDialog">
                     <ul :class="{isHide: isHide}">
-                        <li>Đăng xuất</li>
+                        <li @click="logOut">Đăng xuất</li>
+                        <div class="border-list"></div>
                         <li>Thông tin cá nhân</li>
                     </ul>
                 </div>
@@ -51,6 +52,9 @@ export default {
     methods: {
         openDialog: function(){
             this.isHide = !this.isHide;
+        },
+        logOut: function(){
+            this.$emit('Logout')
         }
     },
 }
@@ -133,14 +137,18 @@ export default {
     opacity: 0.5;
     cursor: pointer;
 }
+.info-setting{
+    height: 0px;
+    width: 0px;
+}
 .info-setting ul{
     position: absolute;
     z-index: 1;
     opacity: 1;
-    width: 50px;
+    width: 90px;
     right: 0px;
-    top: 30px;
-    height: 30px;
+    top: 25px;
+    height: 50px;
     border: 2px solid #e5e5e5;
     border-radius: 3px;
     background: white;
@@ -149,12 +157,21 @@ export default {
     list-style: none;
     font-size: 13px;
     color: black;
-    height: 20px;
+    height: 25px;
     line-height: 30px;
-    margin-left: -20px;
+    margin-left: -30px;
     cursor: pointer;
+}
+.info-setting ul li:active{
+    color: red;
+    opacity: 0.8;
 }
 .isHide{
     display: none;
+}
+.border-list{
+    border-top: 1px solid #e5e5e5;
+    width: 150px;
+    margin-left: -40px;
 }
 </style>

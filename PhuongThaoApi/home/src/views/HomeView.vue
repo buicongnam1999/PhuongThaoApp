@@ -3,12 +3,12 @@
         <slider-view />
         <title-element :title="titles[0].title" :content="titles[0].content"/>
         <div class="product">
-            <div v-for="(product,index) in products.slice(0,5)" :key="index">
+            <div v-for="product in products.slice(0,5)" :key="product.img" class="product-content">
                 <product-element>
                     <div class="product-element-image">
-                        <img src="../assets/img/products/food/1.jpg" alt="" srcset="">
+                        <img :src="require(`../assets/img/products/food/${product.img}`)" alt="" srcset="">
                     </div>
-                    <div class="product-element-search">
+                    <div class="product-element-search" @click="viewProduct(product.img)">
                         <img src="../assets/icon/search-interface-symbol.svg" alt="">
                     </div>
                 </product-element>
@@ -19,22 +19,22 @@
                     <div class="product-price-new">
                         <b>${{product.Price}}</b>
                     </div>
+                    <div class="button-base">
+                        <button-base />
+                    </div>
                     <div class="product-price-old">
                         <s>${{product.Priceold}}</s>
                     </div>
-                </div>
-                <div v-if="index === 4">
-                    <br>
                 </div>
             </div>
         </div>
         <div class="product">
-            <div v-for="(product,index) in products.slice(5,10)" :key="index">
+            <div v-for="product in products.slice(5,10)" :key="product.img" class="product-content">
                 <product-element>
                     <div class="product-element-image">
-                        <img src="../assets/img/products/food/1.jpg" alt="" srcset="">
+                        <img :src="require(`../assets/img/products/food/${product.img}`)" alt="" srcset="">
                     </div>
-                    <div class="product-element-search">
+                    <div class="product-element-search"  @click="viewProduct(product.img,product.name,product.price)">
                         <img src="../assets/icon/search-interface-symbol.svg" alt="">
                     </div>
                 </product-element>
@@ -45,15 +45,16 @@
                     <div class="product-price-new">
                         <b>${{product.Price}}</b>
                     </div>
+                    <div class="button-base">
+                        <button-base />
+                    </div>
                     <div class="product-price-old">
                         <s>${{product.Priceold}}</s>
                     </div>
                 </div>
-                <div v-if="index === 4">
-                    <br>
-                </div>
             </div>
         </div>
+        <product-dialog :image="image" :isHide="isHide" @CloseDialog="CloseDialog" :name="name" :price="price"/>
         <title-element :title="titles[1].title" :content="titles[1].content"/>
         <slider-zoom />
         <div class="category">
@@ -167,6 +168,7 @@
 import ButtonBase from '../components/base/ButtonBase.vue'
 import BlogPosts from '../components/home-view/BlogPosts.vue'
 import CategorySlider from '../components/home-view/CategorySlider.vue'
+import ProductDialog from '../components/home-view/ProductDialog.vue'
 import ProductElement from '../components/home-view/ProductElement.vue'
 import SliderView from '../components/home-view/SliderView.vue'
 import SliderZoom from '../components/home-view/SliderZoom.vue'
@@ -179,7 +181,8 @@ export default {
         SliderZoom,
         CategorySlider,
         BlogPosts,
-        ButtonBase
+        ButtonBase,
+        ProductDialog
     },
     data() {     
         return {
@@ -194,70 +197,70 @@ export default {
                     name: "Neque Porttitor1",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "15.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor2",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "14.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor3",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "3.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor4",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "4.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor5",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "5.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor6",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "6.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor7",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "7.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor8",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "8.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor9",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "9.jpg",
                     sale: ''
                 },
                 {
                     name: "Neque Porttitor10",
                     Price: 3000,
                     Priceold: 5000,
-                    img: "../../assets/img/banner/food/4-1.jpg",
+                    img: "10.jpg",
                     sale: ''
                 }
             ],
@@ -322,8 +325,23 @@ export default {
                 "Featured Products",
                 "Top Rated Products"
             ],
+            image: '',
+            isHide: true,
+            price: 0,
+            name: ''
         }
     },
+    methods:{
+        viewProduct: function(img,name,price){
+            this.image = img,
+            this.name = name,
+            this.price = price
+            this.isHide = !this.isHide;
+        },
+        CloseDialog: function(){
+            this.isHide = !this.isHide;
+        }
+    }
     
 }
 </script>
@@ -357,6 +375,19 @@ export default {
     margin-top: 20px;
     cursor: pointer;
 }
+.button-base{
+    z-index: 3;
+    position: relative;
+    top: -3px;
+    display: none;
+}
+.product-content:hover .button-base{
+    display: inline;
+    width: 60%;
+}
+.product-content:hover .product-price-new{
+    display: none;
+}
 .product-name:hover{
     color: red;
 }
@@ -364,6 +395,9 @@ export default {
 .product-price{
     display: flex;
     margin-top: 15px;
+}
+.product-price-new{
+    width: 60%;
 }
 .product-price-new, .product-price-old{
     font-size: 18px;
@@ -374,6 +408,9 @@ export default {
 }
 .product-price-old{
     margin-left:10px;
+    opacity: 0.8;
+    justify-content: flex-end;
+    width: 40%;
 }
 
 
@@ -431,7 +468,12 @@ export default {
 .blog-title{
     margin-top: 20px;
     font-size: 20px;
+    cursor: pointer;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.blog-title:hover{
+    color: red;
+    opacity: 0.8;
 }
 .blog-info{
     display: flex;

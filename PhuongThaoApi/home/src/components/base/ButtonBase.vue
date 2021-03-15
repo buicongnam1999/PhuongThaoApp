@@ -1,6 +1,6 @@
 <template>
     <div class="button-basic">
-        <i class="fa fa-plus" aria-hidden="true"></i><slot></slot>
+        <i class="fa fa-plus" aria-hidden="true"></i>Add To Cart
     </div>
 </template>
 <script>
@@ -10,16 +10,12 @@ export default {
 </script>
 <style scoped>
 .button-basic{
-    border: 2px solid #e0e0e0;
-    width: 180px;
-    height: 60px;
     cursor: pointer;
-    font-size: 20px;
-    line-height: 60px;
-    padding: 0 20px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .button-basic:hover{
-    background: red;
+    color: red;
     opacity: 0.8;
 }
 .button-basic i{

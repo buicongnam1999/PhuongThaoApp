@@ -9,10 +9,7 @@
                 <th class="left">Điện thoại</th>
                 <th class="left">Email</th>
                 <th class="right">Lương</th>
-                <th class="right">Mã thẻ thành viên</th>
-                <th class="right">
-                    Chức năng
-                </th>
+                <th class="right">Chức năng</th>
             </tr>
         </table>
         <div class="table__content">
@@ -30,7 +27,6 @@
                             <td rowspan="1" colspan="1" class="left">0387200935</td>
                             <td rowspan="1" colspan="1" class="left">BuiCongNam1999@gmail.com</td>
                             <td rowspan="1" colspan="1" class="right">20.000.000</td>
-                            <td rowspan="1" colspan="1" class="right">0545456</td>
                             <td rowspan="1" colspan="1" class="right">
                                 <div class="function">
                                     <div class="function-edit">
@@ -72,10 +68,6 @@ export default {
     font-size: 11px;
     height: 20px;
 }
-.table__content{
-    overflow-y: auto;
-    height: 310px;
-}
 .function{
     display: flex;
     justify-content: flex-end;
@@ -87,6 +79,10 @@ export default {
 }
 .function-delete img:active, .function-edit img:active{
     opacity: 0.3;
+}
+.table__content{
+    overflow-y: auto;
+    height: 310px;
 }
 .center{
     text-align: center;

@@ -11,3 +11,8 @@ C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Common\bin\Deb
 C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Common\bin\Debug\netcoreapp3.1\PhuongThao.Common.pdb
 C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Common\obj\Debug\netcoreapp3.1\PhuongThao.Common.dll
 C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.Common\obj\Debug\netcoreapp3.1\PhuongThao.Common.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Common\bin\Debug\netcoreapp3.1\PhuongThao.Common.deps.json
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Common\bin\Debug\netcoreapp3.1\PhuongThao.Common.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Common\bin\Debug\netcoreapp3.1\PhuongThao.Common.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Common\obj\Debug\netcoreapp3.1\PhuongThao.Common.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.Common\obj\Debug\netcoreapp3.1\PhuongThao.Common.pdb

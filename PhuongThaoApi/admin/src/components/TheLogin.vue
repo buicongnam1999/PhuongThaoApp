@@ -4,7 +4,8 @@
             <div class="login-header">
                 <div class="wrapper">
                     <div class="container">
-                        <h1>Welcome</h1>
+                        <h1>Phuong Thao Shop</h1>
+                        <h2>Welcome</h2>
                     </div>
                 </div>
                 <div class="container">
@@ -73,10 +74,20 @@ h1{
     z-index: 9999;
     margin-top: 250px;
 }
+h2{
+    font-size: 30px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-put;
+    font-weight: 200;
+    z-index: 9999;
+    margin-top: -20px;
+    color: white;
+    opacity: 0.6;
+}
 .form{
     padding: 20px 0;
 	position: relative;
-    top: -370px;
+    top: -330px;
 	z-index: 2;
 }
 input{

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PhuongThao.Common.Class;
+using PhuongThao.Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +15,11 @@ namespace PhuongThaoApi.Controllers
     public class UserController : ControllerBase
     {
         // GET: api/<UserController>
+        UserService<User> _userService = new UserService<User>();
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _userService.GetAllUser();
         }
 
         // GET api/<UserController>/5

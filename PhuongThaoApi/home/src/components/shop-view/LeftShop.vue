@@ -1,12 +1,12 @@
 <template>
     <div class="left">
         <div>
-            <title-left :title="titles[0]"/>
-            <div class="left-border-bottom"></div>
+            <!-- <title-left :title="titles[0]"/> -->
+            <!-- <div class="left-border-bottom"></div> -->
         </div>
         <div>
             <div>
-                <title-left :title="titles[1]"/>
+                <title-left :title="titles[0]"/>
                 <div class="left-border-bottom"></div>
                     <checkbox-basic> Ice Cream (8)</checkbox-basic>
                     <checkbox-basic> Cakes (8)</checkbox-basic>
@@ -17,20 +17,20 @@
             <div>
                 <title-left :title="titles[2]"/>
                 <div class="left-border-bottom"></div>
-                <checkbox-basic> S (6)</checkbox-basic>
-                <checkbox-basic> M (6)</checkbox-basic>
-                <checkbox-basic> L (6)</checkbox-basic>
+                <checkbox-basic>Trên 100.000</checkbox-basic>
+                <checkbox-basic>Trên 200.000</checkbox-basic>
+                <checkbox-basic>Trên 500.000</checkbox-basic>
             </div>
-            <div>
+            <!-- <div>
                 <title-left :title="titles[3]"/>
                 <div class="left-border-bottom"></div>
                 <div class="input-color">
                 <checkbox-basic> White (4)</checkbox-basic>
                 <checkbox-basic> White (4)</checkbox-basic>
                 <checkbox-basic> White (4)</checkbox-basic>
-            </div>
-            <div>
-            <title-left :title="titles[4]"/>
+            </div> -->
+            <!-- <div> -->
+            <!-- <title-left :title="titles[4]"/>
                 <div class="left-border-bottom"></div>
             </div>
             <div>
@@ -40,8 +40,9 @@
             <div>
                 <title-left :title="titles[6]"/>
                 <div class="left-border-bottom"></div>
-            </div>
-        </div>
+            </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
 
 
 
@@ -63,10 +64,10 @@ export default {
     data() {
         return {
             titles:[
-                "Filter By Price",
+                // "Filter By Price",
                 "Products",
                 "Size",
-                "Color",
+                "Giá",
                 "Components",
                 "Styles",
                 "Properties"

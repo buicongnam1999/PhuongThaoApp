@@ -5,18 +5,22 @@
            <input-search />
            <button-refresh />
         </div>
-        
+        <div class="employee-table">
+            <employee-table />
+        </div>
     </div>
 </template>
 <script>
 import HeaderBasic from '../../components/basic/HeaderBasic.vue'
 import ButtonRefresh from '../../components/basic/ButtonRefresh.vue'
 import InputSearch from '../../components/basic/InputSearch.vue'
+import EmployeeTable from '../../components/employee/EmployeeTable.vue'
 export default {
   components: { 
     HeaderBasic,
     ButtonRefresh,
-    InputSearch 
+    InputSearch,
+    EmployeeTable,
     },
     
 }

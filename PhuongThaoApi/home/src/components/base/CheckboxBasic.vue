@@ -15,5 +15,6 @@ export default {
 input[type="checkbox"]{
     height: 15px;
     width: 15px;
+    cursor: pointer;
 }
 </style>
