@@ -16,3 +16,6 @@ C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\
 C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.csproj.CoreCompileInputs.cache
 C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.dll
 C:\Users\Bui Cong Nam\Desktop\New folder\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.Common.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\bin\Debug\netcoreapp3.1\PhuongThao.Common.pdb
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThao.DataLayer\obj\Debug\netcoreapp3.1\PhuongThao.DataLayer.csproj.CopyComplete

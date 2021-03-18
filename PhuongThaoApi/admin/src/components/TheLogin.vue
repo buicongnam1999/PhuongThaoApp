@@ -10,8 +10,8 @@
                 </div>
                 <div class="container">
                     <form class="form">
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
+                        <input type="text" placeholder="Username" v-model="account.name">
+                        <input type="password" placeholder="Password" v-model="account.pass">
                         <div class="button" @click="Check" id="login-button">Login</div>
                     </form>
                 </div>
@@ -25,7 +25,12 @@
 export default {
     data() {
         return {
-            
+            account:{
+                name: '',
+                pass: ''
+            },
+            messageName: '',
+            messagePass: '' 
         }
     },
     props:{
@@ -33,9 +38,34 @@ export default {
     },
     methods: {
         Check: function() {
-            this.$emit('CloseForm')
+            if(this.checkValidate){
+                this.$emit('CloseForm')
+            }
+            
         }
     },
+    computed:{
+        checkValidate(){
+            // if(this.account.name == ''){
+
+            //     this.messageName = 'Tài khoản không được để trống'
+                
+            // }else{
+            //     this.messageName = ''
+            // }
+            // if(this.account.pass == ''){
+            //     this.messagePass = 'Mật khẩu không được để trống'
+            // }else{
+            //     this.messagePass = ''
+            // }
+
+            if(this.account.name == '' || this.account.pass == ''){
+                return false
+            }else{
+                return true
+            }
+        }
+    }
     
 }
 </script>

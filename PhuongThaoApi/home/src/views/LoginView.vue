@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <div class="login-title">
-            Log in to your account
+            Đăng nhập
         </div>
         <login-form />
     </div>

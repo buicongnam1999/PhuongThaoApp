@@ -1,5 +1,5 @@
 <template>
-    <div class="customer-header-button">
+    <div class="customer-header-button" @click="openForm">
         <button class="content-feature">
             <div class="icon-add"><img src="../../assets/icon/add.png" alt=""></div>
             <div class="btn-text">Thêm mới</div>
@@ -10,7 +10,11 @@
 
 <script>
 export default {
-    
+    methods: {
+        openForm: function () {
+            this.$emit('openForm')
+        }
+    },
 }
 </script>
 

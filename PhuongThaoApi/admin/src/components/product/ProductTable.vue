@@ -14,17 +14,17 @@
         <div class="table__content">
             <table>
                 <tbody>
-                        <tr>
+                        <tr v-for="food in foods" :key="food.id">
                             <td rowspan="1" colspan="1" class="center">
-                                1
+                                {{index+1}}
                             </td>
                             <td rowspan="1" colspan="1" class="left">
-                                Bánh Orio
+                                {{food.food_name}}
                             </td>
-                            <td class="right" rowspan="1" colspan="1">20.000</td>
-                            <td rowspan="1" colspan="1" class="right">20</td>
-                            <td rowspan="1" colspan="1" class="left">0387200935</td>
-                            <td rowspan="1" colspan="1" class="left">Bánh kẹo</td>
+                            <td class="right" rowspan="1" colspan="1">{{food.food_money}}</td>
+                            <td rowspan="1" colspan="1" class="right">{{food.food_quality}}</td>
+                            <td rowspan="1" colspan="1" class="left" v-if="food.food_type == 1">Bánh kẹo</td>
+                            <td rowspan="1" colspan="1" class="left" v-else>Hoa quả</td>
                             <td rowspan="1" colspan="1" class="right">20.000.000</td>
                             <td rowspan="1" colspan="1" class="right">
                                 <div class="function">
@@ -46,13 +46,30 @@
 
 <script>
 import ProductPaging from './ProductPaging.vue'
-
+import { mapActions, mapGetters} from 'vuex'
 export default {
-  components: {
-    ProductPaging
+  components: { ProductPaging },
+  data(){
+      return{
+            index: 0,
+            keys:[
 
-       },
-    
+            ]
+      }
+  },
+    computed: {
+        ...mapGetters("foods", {foods: "getFoods"}),
+        // products(){
+        //     return Object.keys(this.)
+        // }
+    },
+    methods: {
+        ...mapActions("foods", {loadFoods: "loadData"})
+    },
+    created(){
+        this.loadFoods();
+    },
+
 }
 </script>
 

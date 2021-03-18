@@ -24,8 +24,10 @@
     ".NETCoreApp,Version=v3.1": {
       "PhuongThaoApi/1.0.0": {
         "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
           "PhuongThao.Common": "1.0.0",
           "PhuongThao.Service": "1.0.0",
+          "Swashbuckle.AspNetCore": "6.1.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -330,7 +332,19 @@
           "lib/netstandard2.0/Dapper.dll": {}
         }
       },
+      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
       "Microsoft.NETCore.Platforms/3.1.0": {},
+      "Microsoft.OpenApi/1.2.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "1.2.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.7.0",
@@ -346,6 +360,17 @@
         },
         "compile": {
           "lib/netcoreapp3.1/MySqlConnector.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -380,6 +405,53 @@
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
           }
+        }
+      },
+      "Swashbuckle.AspNetCore/6.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "6.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.1.0"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/6.1.0": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.2.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "6.1.0.0",
+            "fileVersion": "6.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/6.1.0": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "6.1.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "6.1.0.0",
+            "fileVersion": "6.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/6.1.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "6.1.0.0",
+            "fileVersion": "6.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
       "System.Data.SqlClient/4.8.2": {
@@ -421,6 +493,9 @@
       },
       "System.Security.Principal.Windows/4.7.0": {},
       "PhuongThao.Common/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
         "runtime": {
           "PhuongThao.Common.dll": {}
         },
@@ -432,6 +507,7 @@
         "dependencies": {
           "Dapper": "2.0.78",
           "MySqlConnector": "1.3.0",
+          "PhuongThao.Common": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {
@@ -2160,12 +2236,26 @@
       "path": "dapper/2.0.78",
       "hashPath": "dapper.2.0.78.nupkg.sha512"
     },
+    "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
+      "path": "microsoft.extensions.apidescription.server/3.0.0",
+      "hashPath": "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "path": "microsoft.netcore.platforms/3.1.0",
       "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+      "path": "microsoft.openapi/1.2.3",
+      "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.7.0": {
       "type": "package",
@@ -2180,6 +2270,13 @@
       "sha512": "sha512-p/+KOq5Qe6rvwzS0UrmhnbLRpEMWOtKvLQkG3999EMz+wwvF0mlnyqyHQBQrS+i7mnDmLen+hoHg0uGytGvfeQ==",
       "path": "mysqlconnector/1.3.0",
       "hashPath": "mysqlconnector.1.3.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",
@@ -2208,6 +2305,34 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IPW7hzn4HF01d73uSUgbUWYXqkYEANm9f3/TPPi9hgA8i3+KvcZ9uwMXVneK4eU12QR0dOaeFyZBIBb4JwQh+A==",
+      "path": "swashbuckle.aspnetcore/6.1.0",
+      "hashPath": "swashbuckle.aspnetcore.6.1.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3L/k/RrB9nQIoddQ2Syi+PFQcebW1g7bjOEV1xrhgcbr4owS2oetouiVLIegmUBcg3DE/MWOqIT63zTceTXi0g==",
+      "path": "swashbuckle.aspnetcore.swagger/6.1.0",
+      "hashPath": "swashbuckle.aspnetcore.swagger.6.1.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-INX2yTXvk3YBPzR0NqCr23Z/UJl/q68fm2WIwB8mDxU3UfnMtea7GEdG/5/Jvz4mbDKDfpryfk9NrEj7tWPdWg==",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.1.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.6.1.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JdItBvuC3oKkf9PW1o/Ad1fP4Z31GpLYfBTKBtPstGtg7Sc85Vqtf4mhd3B/z0GJuGLQYInpWL1It2/0yzLVVA==",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.1.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.6.1.0.nupkg.sha512"
     },
     "System.Data.SqlClient/4.8.2": {
       "type": "package",

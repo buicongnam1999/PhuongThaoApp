@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -50,16 +51,6 @@ namespace PhuongThao.Common.Class
         /// Kiểu loại người dùng
         /// </summary>
         public int user_type { get; set; }
-
-        /// <summary>
-        /// Ngày tạo người dùng
-        /// </summary>
-        public DateTime? user_create_at { get; set; }
-
-        /// <summary>
-        /// Ngày sửa
-        /// </summary>
-        public DateTime? user_update_at { get; set; }
 
         /// <summary>
         /// Hình ảnh người dùng

@@ -3,7 +3,7 @@
         <div class="header-title">
             <slot></slot>
         </div>
-        <button-add />
+        <button-add @openForm="openForm"/>
     </div>
 </template>
 <script>
@@ -11,7 +11,12 @@ import ButtonAdd from './ButtonAdd.vue'
 export default {
     components:{
         ButtonAdd
-    }
+    },
+    methods: {
+        openForm: function() {
+            this.$emit('openForm')
+        }
+    },
 }
 </script>
 

@@ -1,6 +1,8 @@
-﻿using PhuongThao.DataLayer.DataLayer;
+﻿using PhuongThao.Common.Class;
+using PhuongThao.DataLayer.DataLayer;
 using PhuongThao.Service.interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -8,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace PhuongThao.Service.Service
 {
-    public class UserService<User> : IUserService<User>
+    public class UserService : IBaseService<User>
     {
-        DBConnect<User> _dbConnection;
+        UserConnect _dbConnection;
 
         public UserService()
         {
-            _dbConnection = new DBConnect<User>();
+            _dbConnection = new UserConnect();
         }
 
         /// <summary>
@@ -22,10 +24,10 @@ namespace PhuongThao.Service.Service
         /// </summary>
         /// <returns>Danh sách người dùng</returns>
         /// Create By: NamBC (08/03/21)
-        public IEnumerable<User> GetAllUser()
+        public IEnumerable GetAllUser()
         {
-            _dbConnection = new DBConnect<User>();
-            return _dbConnection.getAllData();
+            _dbConnection = new UserConnect();
+            return _dbConnection.GetAllUser();
 
         }
 
@@ -47,9 +49,10 @@ namespace PhuongThao.Service.Service
         /// <param name="cmd">Kiểu thực thi truy vấn</param>
         /// <returns>Kiểu đúng hoặc sai</returns>
         /// Create By: NamBC (08/03/21)
-        public Task<int> InsertUser(User entity, CommandType cmd = CommandType.Text)
+        public int InsertUser(User entity)
         {
-            throw new NotImplementedException();
+            _dbConnection = new UserConnect();
+            return  _dbConnection.InsertUser(entity);
         }
 
         /// <summary>
@@ -59,9 +62,10 @@ namespace PhuongThao.Service.Service
         /// <param name="cmd">Kiểu thực thi</param>
         /// <returns>Kiểu số nguyên</returns>
         /// Create By: NamBC (08/03/21)
-        public Task<int> UpdateUser(User entity, CommandType cmd = CommandType.Text)
+        public int UpdateUser(User entity, CommandType cmd = CommandType.Text)
         {
-            throw new NotImplementedException();
+            _dbConnection = new UserConnect();
+            return _dbConnection.UpdateUser(entity);
         }
 
         /// <summary>
@@ -71,9 +75,10 @@ namespace PhuongThao.Service.Service
         /// <param name="cmd">Kiểu thực thi</param>
         /// <returns>Kiểu số nguyên</returns>
         /// Create By: NamBC (08/03/21)
-        public Task<int> DeleteUser(int id, CommandType cmd = CommandType.Text)
+        public int DeleteUser(int id, CommandType cmd = CommandType.Text)
         {
-            throw new NotImplementedException();
+            _dbConnection = new UserConnect();
+            return _dbConnection.Delete(id);
         }
 
         /// <summary>
@@ -95,6 +100,70 @@ namespace PhuongThao.Service.Service
         /// <returns>Đúng hoặc sai</returns>
         /// Create By: NamBC (08/03/21)
         public Task<bool> GetUserByEmail(string email, CommandType cmd = CommandType.Text)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Kiểm tra tồn tại tài khoản chưa
+        /// </summary>
+        /// <param name="name">Tài khoản</param>
+        /// <returns>Kiểu Boolean</returns>
+        /// Create By: NamBC (17/03/21)
+        public bool CheckUserName(string name)
+        {
+            return _dbConnection.CheckUserName(name);
+        }
+
+        /// <summary>
+        /// Kiểm tra email đã tồn tại chưa
+        /// </summary>
+        /// <param name="email">Email</param>
+        /// <returns>Kiểu Boolean</returns>
+        /// Create By: NamBC (17/03/21)
+        public bool CheckUserEmail(string email)
+        {
+            return _dbConnection.CheckUserEmail(email);
+        }
+
+
+        /// <summary>
+        /// Lấy toàn bộ danh sách nhân viên
+        /// </summary>
+        /// <returns>Danh sách nhân viên</returns>
+        /// Create By: NamBC (17/03/21)
+        public IEnumerable<object> getAllEmployee()
+        {
+            return _dbConnection.getAllEmployee();
+        }
+
+        /// <summary>
+        /// Lấy toàn bộ danh sách khách hàng
+        /// </summary>
+        /// <returns>Danh sách khách hàng</returns>
+        /// Create By: NamBC (17/03/21)
+        public IEnumerable<object> getAllCustomer()
+        {
+            return _dbConnection.getAllCustomer();
+        }
+
+        public IEnumerable<Object> GetAllData()
+        {
+            _dbConnection = new UserConnect();
+            return _dbConnection.GetAllUser();
+        }
+
+        public int InsertObject(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int UpdateObject(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteObject(int entity)
         {
             throw new NotImplementedException();
         }

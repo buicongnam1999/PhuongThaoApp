@@ -7,8 +7,8 @@
                 <th class="center">Giới tính</th>
                 <th class="left">Ngày sinh</th>
                 <th class="left">Điện thoại</th>
-                <th class="left">Email</th>
-                <th class="right">Lương</th>
+                <th class="left" colspan="2">Email</th>
+                <th class="left">Tài khoản</th>
                 <th class="right">Chức năng</th>
             </tr>
         </table>
@@ -25,11 +25,11 @@
                             <td class="center" rowspan="1" colspan="1">Nam</td>
                             <td rowspan="1" colspan="1" class="left">20-09-1999</td>
                             <td rowspan="1" colspan="1" class="left">0387200935</td>
-                            <td rowspan="1" colspan="1" class="left">BuiCongNam1999@gmail.com</td>
-                            <td rowspan="1" colspan="1" class="right">20.000.000</td>
+                            <td rowspan="1" colspan="2" class="left">BuiCongNam1999@gmail.com</td>
+                            <td rowspan="1" colspan="1" class="left">nam1999@gmail.com</td>
                             <td rowspan="1" colspan="1" class="right">
                                 <div class="function">
-                                    <div class="function-edit">
+                                    <div class="function-edit" @click="openForm">
                                         <img src="../../assets/icon/edit.svg" alt="" srcset="">
                                     </div>
                                     <div class="function-delete">
@@ -42,14 +42,31 @@
             </table>
         </div>
         <grid-paging />
+        <dialog-employee :isHide="isHide" @closeForm="closeForm"/>
     </div>
 </template>
 
 <script>
+import DialogEmployee from './DialogEmployee.vue'
 import GridPaging from './GridPaging.vue'
 export default {
-  components: { GridPaging },
-    
+  components: { 
+        GridPaging,
+        DialogEmployee 
+    },
+    data() {
+        return {
+            isHide: true
+        }
+    },
+    methods: {
+        openForm: function() {
+            this.isHide = !this.isHide
+        },
+        closeForm: function() {
+            this.isHide = !this.isHide
+        }
+    },
 }
 </script>
 

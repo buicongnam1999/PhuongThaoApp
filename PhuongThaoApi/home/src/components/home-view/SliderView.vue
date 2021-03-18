@@ -72,9 +72,11 @@ button:active, button:hover{
   border: none;
 }
 .next{
+  margin-top: 200px;
   right: 0;
 }
 .prev{
+  margin-top: 200px;
   left: 0;
 }
 </style>

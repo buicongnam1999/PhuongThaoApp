@@ -7,9 +7,14 @@ namespace PhuongThao.Common.Class
     public class ResultSet
     {
         /// <summary>
-        /// Trả về thực thi
+        /// Lỗi thông báo ra
         /// </summary>
-        public Boolean Success { get; set; }
+        public List<ErrMsg> error { get; set; }
+
+        /// <summary>
+        /// Kiểm tra dữ liệu
+        /// </summary>
+        public Boolean Sucess { set; get; }
 
         /// <summary>
         /// Dữ liệu trả về

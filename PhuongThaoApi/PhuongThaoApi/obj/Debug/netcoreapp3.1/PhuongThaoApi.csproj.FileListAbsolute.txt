@@ -68,3 +68,11 @@ C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debu
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.Service.pdb
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\bin\Debug\netcoreapp3.1\PhuongThao.DataLayer.pdb
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.csproj.CopyComplete
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.Properties.Resources.resources
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.csproj.GenerateResource.cache
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

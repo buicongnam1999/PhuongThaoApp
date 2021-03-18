@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="header-top-logo">
-                <img src="../assets/img/logo/logo.png" alt="">
+                <router-link to="/"><img src="../assets/img/logo/logo.png" alt=""></router-link>
             </div>
             <div class="header-top-setting">
                 <div class="setting">
@@ -44,15 +44,15 @@
                     Sản phẩm
                     <div class="menu-drop-down">
                         <ul>
-                            <li>Đồ ăn nhanh</li>
+                            <li><router-link to="shopview">Đồ ăn nhanh</router-link></li>
                             <div class="border-bottom"></div>
-                            <li>Gà</li>
+                            <li><router-link to="shopview">Gà</router-link></li>
                             <div class="border-bottom"></div>
-                            <li>Đồ uống</li>
+                            <li><router-link to="shopview">Đồ uống</router-link></li>
                             <div class="border-bottom"></div>
-                            <li>Hoa quả</li>
+                            <li><router-link to="shopview">Hoa quả</router-link></li>
                             <div class="border-bottom"></div>
-                            <li>Bánh ngọt</li>
+                            <li><router-link to="shopview">Bánh ngọt</router-link></li>
                         </ul>
                     </div>
                 </div>

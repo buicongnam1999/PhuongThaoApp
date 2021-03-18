@@ -13,8 +13,8 @@ namespace PhuongThao.DataLayer.DataLayer
     public class DBConnect<T> : IDBConnect<T>
     {
 
-        public String _stringConnect = @"Data Source=DESKTOP-1BICBR5\SQLEXPRESS;Initial Catalog=PhuongThaoShop;Integrated Security=True";
-        IDbConnection _dbConnect;
+        protected String _stringConnect = @"Data Source=DESKTOP-1BICBR5\SQLEXPRESS;Initial Catalog=PhuongThaoShop;Integrated Security=True";
+        protected SqlConnection _dbConnect;
         public DBConnect()
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -43,9 +43,39 @@ namespace PhuongThao.DataLayer.DataLayer
         /// <param name="cmd">Kiểu thực thi</param>
         /// <returns>Kiểu số nguyên</returns>
         /// Create By: NamBC (07/03/21)
-        public Task<int> InsertObject(T entity, CommandType cmd = CommandType.Text)
+        public int InsertObject(T entity, CommandType cmd = CommandType.Text ,String query = null)
         {
-            throw new NotImplementedException();
+            string className = typeof(T).Name;
+            var properties = typeof(T).GetProperties();
+            string sqlPropertyBuider = string.Empty;
+            string sqlPropertyParamBuilder = "";
+            int i = 0;
+            foreach(var property in properties)
+            {
+                if(i == 0)
+                {
+
+                }
+                else
+                {
+                    var propertyName = property.Name;
+                    object propertyValue = property.GetValue(entity);
+                    if (propertyValue.GetType() == typeof(String))
+                    {
+                        sqlPropertyParamBuilder += $", N'{propertyValue}'";
+                    }
+                    else
+                    {
+                        /*sqlPropertyParamBuilder += $",{int.Parse(propertyValue)}";*/
+                    }
+                    sqlPropertyBuider += $", {propertyName}";
+                    
+                }
+                
+                i++;
+            }
+            String sql = $"INSERT INTO tbl{className}({sqlPropertyBuider.Substring(1)}) VALUES({sqlPropertyParamBuilder.Substring(1)})";
+            return _dbConnect.Execute(sql);
         }
 
         /// <summary>

@@ -22,7 +22,7 @@ namespace PhuongThao.DataLayer.interfaces
         /// /// <param name="cmd">Kiểu thực thi truy vấn</param>
         /// <returns>Kiểu số tự nhiên</returns>
         /// Create By: NamBC(07/03/21)
-        public Task<int> InsertObject(T entity, CommandType cmd = CommandType.Text);
+        public int InsertObject(T entity, CommandType cmd = CommandType.Text,string query = null);
 
         /// <summary>
         /// Hàm sửa đổi dữ liệu
@@ -50,6 +50,8 @@ namespace PhuongThao.DataLayer.interfaces
         /// <returns>Đối tượng cần tìm</returns>
         /// Create By: NamBC (07/03/21)
         public Task<T> GetObject(int id, CommandType cmd = CommandType.Text);
+
+        
 
     }
 }

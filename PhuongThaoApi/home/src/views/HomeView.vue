@@ -34,7 +34,7 @@
                     <div class="product-element-image">
                         <img :src="require(`../assets/img/products/food/${product.img}`)" alt="" srcset="">
                     </div>
-                    <div class="product-element-search"  @click="viewProduct(product.img,product.name,product.price)">
+                    <div class="product-element-search"  @click="viewProduct(product.img,product.name)">
                         <img src="../assets/icon/search-interface-symbol.svg" alt="">
                     </div>
                 </product-element>
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <product-dialog :image="image" :isHide="isHide" @CloseDialog="CloseDialog" :name="name" :price="price"/>
+        <product-dialog :image="image" :isHide="isHide" @CloseDialog="CloseDialog" :name="name" :price="50000"/>
         <title-element :title="titles[1].title" :content="titles[1].content"/>
         <slider-zoom />
         <div class="category">
@@ -332,10 +332,9 @@ export default {
         }
     },
     methods:{
-        viewProduct: function(img,name,price){
+        viewProduct: function(img,name){
             this.image = img,
             this.name = name,
-            this.price = price
             this.isHide = !this.isHide;
         },
         CloseDialog: function(){

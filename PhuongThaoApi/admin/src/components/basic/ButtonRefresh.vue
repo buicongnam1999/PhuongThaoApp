@@ -1,5 +1,5 @@
 <template>
-    <div class="refresh">
+    <div class="refresh" @click="refresh">
         <div class="btn-refresh">
             <img src="../../assets/icon/refresh.png" alt="" srcset="">
         </div>

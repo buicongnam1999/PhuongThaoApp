@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yNWM7EMwaC5XKPTmg8rF38A7rC0gbhhslFdUihMYYvIhAlSb9BgY89Yt/k+APGmKoKnfjtmN0mLE2YucGQg3lw==",
+  "dgSpecHash": "YHecI0Z4jzlxeBPV67uo3G/Fak2HipLP1P0ZbYvPeB+Ik51fNo2hb+TX+7QjhIIkc1tVsIFBwXp5c18rQ7Om7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bui Cong Nam\\Desktop\\PhuongThaoApp\\PhuongThaoApi\\PhuongThao.Common\\PhuongThao.Common.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Bui Cong Nam\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

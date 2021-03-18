@@ -11,9 +11,13 @@
                     <div class="product-dialog-close">
                         <img src="../../assets/icon/cancel.svg" alt="" srcset="" @click="closeDialog">
                     </div>
+                    <div class="product-name">
+                        {{name}}
+                    </div>
+                    <div class="product-price">
+                        {{price}}
+                    </div>
                 </div>
-                {{name}}
-                {{price}}
             </div>
         </div>
     </div>
@@ -63,6 +67,20 @@ export default {
 }
 .product-dialog-close{
     width: 40%;
+}
+.product-name{
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 40px;
+    padding-left: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.product-price{
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .product-dialog-right{
     width: 60%;
