@@ -15,30 +15,31 @@
         <div class="table__content">
             <table>
                 <tbody>
-                        <tr>
-                            <td rowspan="1" colspan="1" class="center">
-                                1
-                            </td>
-                            <td rowspan="1" colspan="1" class="left">
-                                Bùi Công Nam
-                            </td>
-                            <td class="center" rowspan="1" colspan="1">Nam</td>
-                            <td rowspan="1" colspan="1" class="left">20-09-1999</td>
-                            <td rowspan="1" colspan="1" class="left">0387200935</td>
-                            <td rowspan="1" colspan="2" class="left">BuiCongNam1999@gmail.com</td>
-                            <td rowspan="1" colspan="1" class="left">nam1999@gmail.com</td>
-                            <td rowspan="1" colspan="1" class="right">
-                                <div class="function">
-                                    <div class="function-edit" @click="openForm">
-                                        <img src="../../assets/icon/edit.svg" alt="" srcset="">
-                                    </div>
-                                    <div class="function-delete">
-                                        <img src="../../assets/icon/x.svg" alt="" srcset="">
-                                    </div>
+                    <tr v-for="(employee,index) in employees" :key="index">
+                        <td rowspan="1" colspan="1" class="center">
+                            {{index++}}
+                        </td>
+                        <td rowspan="1" colspan="1" class="left">
+                            {{employee.user_fullname}}
+                        </td>
+                        <td class="center" rowspan="1" colspan="1" v-if="employee.user_gender">Nam</td>
+                        <td class="center" rowspan="1" colspan="1" v-else>Nữ</td>
+                        <td rowspan="1" colspan="1" class="left">20-09-1999</td>
+                        <td rowspan="1" colspan="1" class="left">{{employee.user_phone}}</td>
+                        <td rowspan="1" colspan="2" class="left">{{employee.user_email}}</td>
+                        <td rowspan="1" colspan="1" class="left">{{employee.u_name}}</td>
+                        <td rowspan="1" colspan="1" class="right">
+                            <div class="function">
+                                <div class="function-edit" @click="openForm">
+                                    <img src="../../assets/icon/edit.svg" alt="" srcset="">
                                 </div>
-                            </td>
-                        </tr>
-                    </tbody>
+                                <div class="function-delete">
+                                    <img src="../../assets/icon/x.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <grid-paging />
@@ -49,6 +50,7 @@
 <script>
 import DialogEmployee from './DialogEmployee.vue'
 import GridPaging from './GridPaging.vue'
+import {mapActions, mapGetters} from 'vuex'
 export default {
   components: { 
         GridPaging,
@@ -56,7 +58,7 @@ export default {
     },
     data() {
         return {
-            isHide: true
+            isHide: true,
         }
     },
     methods: {
@@ -65,8 +67,16 @@ export default {
         },
         closeForm: function() {
             this.isHide = !this.isHide
-        }
+        },
+        ...mapActions("employees",{loadEmployees: "loadEmployee"})
     },
+    computed:{
+        ...mapGetters("employees",{employees: "getEmployee"})
+    },
+    created(){
+        this.loadEmployees();
+    }
+
 }
 </script>
 

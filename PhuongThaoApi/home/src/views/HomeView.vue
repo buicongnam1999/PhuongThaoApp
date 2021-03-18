@@ -266,16 +266,16 @@ export default {
             ],
             titles:[
                 {
-                    title: "New Arrivals",
-                    content: "Add our new arrivals to your weekly lineup"
+                    title: "Sản phẩm mới",
+                    content: "Các sản phẩm luôn được thêm mới"
                 },
                 {
-                    title: "Client Testimonials",
-                    content: "what they say"
+                    title: "Sản phẩm được chú ý",
+                    content: "Các sản phẩm được nhiều người thích nhât"
                 },
                 {
-                    title: "Latest Blog Posts",
-                    content: "There are latest blog posts"
+                    title: "Các bài viết yêu thích nhân",
+                    content: "Các bài báo mới nhất"
                 }
             ],
             product_inners_best: [

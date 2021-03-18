@@ -14,7 +14,7 @@
         <div class="table__content">
             <table>
                 <tbody>
-                        <tr v-for="food in foods" :key="food.id">
+                        <tr v-for="(food,index) in foods" :key="food.id">
                             <td rowspan="1" colspan="1" class="center">
                                 {{index+1}}
                             </td>
@@ -51,17 +51,11 @@ export default {
   components: { ProductPaging },
   data(){
       return{
-            index: 0,
-            keys:[
 
-            ]
       }
   },
     computed: {
         ...mapGetters("foods", {foods: "getFoods"}),
-        // products(){
-        //     return Object.keys(this.)
-        // }
     },
     methods: {
         ...mapActions("foods", {loadFoods: "loadData"})
