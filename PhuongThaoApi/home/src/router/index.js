@@ -22,12 +22,12 @@ const routes = [
     path: "/shoplogin",
     name: "login",
     component: ()=>
-      import(/*Shop login */ "../views/ShopLogin.vue")
+      import(/*Shop login */ "../views/LoginView.vue")
     
   },
   {
     path: "/blog",
-    name: "login",
+    name: "blog",
     component: ()=>
     import(/*Blog */ "../views/BlogView.vue")
   },
@@ -41,18 +41,26 @@ const routes = [
   },
   {
     path: "/register",
-    name: "cart",
+    name: "register",
     component: ()=>
     import(
-      /*Cart */ "../views/RegisterView.vue"
+      /*Register */ "../views/RegisterView.vue"
     )
   },
   {
     path: "/login",
-    name: "cart",
+    name: "login",
     component: ()=>
     import(
-      /*Cart */ "../views/LoginView.vue"
+      /*Login */ "../views/LoginView.vue"
+    )
+  },
+  {
+    path: "/order",
+    name: "order",
+    component: ()=>
+    import(
+      /*Order */ "../views/OrderView.vue"
     )
   },
 ]

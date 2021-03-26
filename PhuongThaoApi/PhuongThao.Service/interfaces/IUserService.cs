@@ -101,5 +101,8 @@ namespace PhuongThao.Service.interfaces
         /// <returns>Danh sách khách hàng</returns>
         /// Create By: NamBC(17/03/21)
         public IEnumerable<object> getAllCustomer();
+
+
+        public IEnumerable<object> CheckLoginUser(String name, String pass);
     }
 }

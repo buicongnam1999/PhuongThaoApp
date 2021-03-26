@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -18,6 +18,7 @@ namespace PhuongThaoApi
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,10 +30,22 @@ namespace PhuongThaoApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(c =>
+
+            services.AddCors(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Phuong Thao", Version = "v1" });
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:8080", "http://localhost:8081")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod()
+                                      .AllowCredentials();
+                                      ;
+                                  });
+
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,37 +54,14 @@ namespace PhuongThaoApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                /*app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PhuongThao API v1"));*/
             }
-
-            /*app.UseExceptionHandler(a => a.Run(async context =>
-            {
-                var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
-                var exception = exceptionHandlerPathFeature.Error;
-
-                //await context.Response.WriteAsJsonAsync(new { error = exception.Message });
-                var errorResult = new List<ErrMsg>();
-                errorResult.Add(new ErrMsg()
-                {
-                    devMessage = exception.Message,
-                    userMessage = Properties.Resources.Error_Exeption,
-
-                });
-
-                var result = new ResultSet()
-                {
-                    data = null,
-                    error = errorResult,
-                    *//*MISACukCukCode = MISACukCukServiceCode.Exception*//*
-
-                };
-                await context.Response.WriteAsJsonAsync(result);
-            }));*/
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // sử dụng cors
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
@@ -79,6 +69,8 @@ namespace PhuongThaoApi
             {
                 endpoints.MapControllers();
             });
+
+
         }
     }
 }

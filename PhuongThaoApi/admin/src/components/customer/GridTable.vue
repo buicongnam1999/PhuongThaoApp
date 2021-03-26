@@ -18,18 +18,19 @@
         <div class="table__content">
             <table>
                 <tbody>
-                        <tr>
+                        <tr v-for="(customer,index) in customers" :key="index">
                             <td rowspan="1" colspan="1" class="center">
-                                1
+                                {{index+1}}
                             </td>
                             <td rowspan="1" colspan="1" class="left">
-                                Bùi Công Nam
+                                {{customer.user_fullname}}
                             </td>
-                            <td class="center" rowspan="1" colspan="1">Nam</td>
-                            <td rowspan="1" colspan="1" class="left">20-09-1999</td>
-                            <td rowspan="1" colspan="1" class="left">0387200935</td>
-                            <td rowspan="1" colspan="1" class="left">BuiCongNam1999@gmail.com</td>
-                            <td rowspan="1" colspan="1" class="right">20.000.000</td>
+                            <td class="center" rowspan="1" colspan="1" v-if="customer.gender">Nam</td>
+                            <td class="center" rowspan="1" colspan="1" v-else>Nữ</td>
+                            <td rowspan="1" colspan="1" class="left">{{customer.user_phone}}</td>
+                            <td rowspan="1" colspan="1" class="left">{{customer.user_phone}}</td>
+                            <td rowspan="1" colspan="1" class="left">{{customer.user_email}}</td>
+                            <td rowspan="1" colspan="1" class="right">20</td>
                             <td rowspan="1" colspan="1" class="right">0545456</td>
                             <td rowspan="1" colspan="1" class="right">
                                 <div class="function">
@@ -41,7 +42,7 @@
                                     </div>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> 
                     </tbody>
             </table>
         </div>
@@ -51,8 +52,26 @@
 
 <script>
 import GridPaging from './GridPaging.vue'
+// import axios from "axios";
+import { mapActions, mapGetters} from 'vuex'
 export default {
   components: { GridPaging },
+  data() {
+      return {
+        //   customers:[
+
+        //   ]
+      }
+  },
+    computed: {
+        ...mapGetters("customers", {customers: "getCustomers"}),
+    },
+    methods: {
+        ...mapActions("customers", {loadCustomers: "loadData"})
+    },
+    created(){
+        this.loadCustomers();
+    },
     
 }
 </script>

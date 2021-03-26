@@ -54,7 +54,7 @@ export default {
             this.isHide = !this.isHide;
         },
         logOut: function(){
-            this.$emit('Logout')
+            this.$router.push({path: '/login'})
         }
     },
 }

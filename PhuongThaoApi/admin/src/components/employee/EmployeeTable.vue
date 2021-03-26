@@ -17,7 +17,7 @@
                 <tbody>
                     <tr v-for="(employee,index) in employees" :key="index">
                         <td rowspan="1" colspan="1" class="center">
-                            {{index++}}
+                            {{index+1}}
                         </td>
                         <td rowspan="1" colspan="1" class="left">
                             {{employee.user_fullname}}
@@ -30,10 +30,10 @@
                         <td rowspan="1" colspan="1" class="left">{{employee.u_name}}</td>
                         <td rowspan="1" colspan="1" class="right">
                             <div class="function">
-                                <div class="function-edit" @click="openForm">
+                                <div class="function-edit" @click="openForm(employee.u_id)">
                                     <img src="../../assets/icon/edit.svg" alt="" srcset="">
                                 </div>
-                                <div class="function-delete">
+                                <div class="function-delete" @click="deleteEmployee(employee.u_id, index)">
                                     <img src="../../assets/icon/x.svg" alt="" srcset="">
                                 </div>
                             </div>
@@ -43,39 +43,100 @@
             </table>
         </div>
         <grid-paging />
-        <dialog-employee :isHide="isHide" @closeForm="closeForm"/>
+        <dialog-employee :isHide="isHide" :employee="employeeEdit" @closeForm="closeForm" v-on:addObject="addObject($e)"/>
+        <pop-up-basic :isHide="isHidePop">
+            <div slot="title">Thông báo</div>
+            <div slot="message"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Bạn có muốn xóa không?</div>
+            <div slot="button">
+                <div class="button">
+                    <div class="btn-sucess" @click="Ok">Đồng ý</div>
+                    <div class="btn-cancel" @click="Cancel">Hủy bỏ</div>
+                </div>
+            </div>
+        </pop-up-basic>
     </div>
 </template>
 
 <script>
 import DialogEmployee from './DialogEmployee.vue'
 import GridPaging from './GridPaging.vue'
-import {mapActions, mapGetters} from 'vuex'
+import axios from 'axios'
+import PopUpBasic from '../basic/PopUpBasic.vue'
+import { mapActions, mapGetters} from 'vuex'
 export default {
   components: { 
         GridPaging,
-        DialogEmployee 
+        DialogEmployee,
+        PopUpBasic,
     },
     data() {
         return {
             isHide: true,
+            isHidePop: true,
+            sucess: false,
+            index: -1,
+            isHideEdit: true,
+            id : 0,
+            employeeEdit:{
+
+            }
         }
     },
+    computed:{
+        ...mapGetters("employees", {employees: "getEmployees"},{employee: "getEmployeeEdit"}),
+    },
+    async created(){
+        this.loadEmployees();
+    },
     methods: {
-        openForm: function() {
+        async openForm(id) {
+            // await axios.get("https://localhost:44344/api/user/"+id)
+            // .then( res => this.employeeEdit = res.data)
+            // this.isHide = !this.isHide
+            // console.log(this.employeeEdit.u_id)
+
+            this.$store.dispatch("employees/getEmployeeById",id);
+            // this.loadEmployeeById();
+            console.log(this.employee);
             this.isHide = !this.isHide
         },
         closeForm: function() {
-            this.isHide = !this.isHide
+            this.isHide = true
+            this.isHideEdit = true
         },
-        ...mapActions("employees",{loadEmployees: "loadEmployee"})
+        Cancel: function(){
+            this.isHidePop =!this.isHidePop
+        },
+        async Ok(){
+            this.sucess = !this.sucess
+            if(this.sucess){
+                await axios.delete("https://localhost:44344/api/user/" + this.id)
+                .then(response => 
+                        console.log(response.data)
+                    )
+                .catch(error => alert(error));
+                
+                this.sucess = !this.sucess
+            }
+            this.employees.splice(this.index,1)
+            this.isHidePop =!this.isHidePop
+            this.index = -1
+            this.id = 0;
+        },
+        deleteEmployee(id,index){
+            this.id = id
+            this.index = index
+            this.isHidePop = !this.isHidePop
+        },
+        addObject: function(e){
+            e === 'abc' ? true: false
+            this.isHide = e
+            // alert(e.user_fullname)
+        },
+        ...mapActions("employees", {loadEmployees: "loadData"},{loadEmployeeById: "getEmployeeById"})
+
     },
-    computed:{
-        ...mapGetters("employees",{employees: "getEmployee"})
-    },
-    created(){
-        this.loadEmployees();
-    }
+    
 
 }
 </script>
@@ -111,6 +172,9 @@ export default {
     overflow-y: auto;
     height: 310px;
 }
+/* .button{
+    display: flex;
+} */
 .center{
     text-align: center;
 }

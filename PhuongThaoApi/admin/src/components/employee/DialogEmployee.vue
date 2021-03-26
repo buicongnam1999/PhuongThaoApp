@@ -4,7 +4,7 @@
             <div class="ui-dialog-content">
                 <div class="ui-dialog-title">
                     <div class="dialog-text">
-                        <b>Ghi tăng nhân viên</b>
+                        <b>Ghi tăng nhân viên{{employeeEdit}}</b>
                     </div>
                     <div class="dialog-setting">
                         <div class="dialog-help">
@@ -19,49 +19,49 @@
                     <form action="">
                         <div class="form-element">
                             <div class="element-left">
-                                <div><label for="">Tên nhân viên(*) <i style="color: red" v-if="codeNull">{{messageNull}}</i></label></div>
-                                <div :class="{res: res}">
+                                <div><label for="">Tên nhân viên(*) <i style="color: red"></i></label></div>
+                                <div>
                                     <div class="dialog-input" style="margin-top: 10px">
-                                        <input type="text" name="txtAssetCode">
+                                        <input type="text" name="txtEmployeeName" v-model="employee.user_fullname">
                                         <!-- <span style="padding-left: 10px"><img src="../../assets/content/icon/i_arrow_up_small.svg" alt=""></span> -->
                                     </div>
                                 </div>
                             </div>
                             <div class="element-right">
-                                <div><label for="">Tên tài khoản(*)</label><i style="color: red" v-if="nameNull">{{messageNull}}</i></div>
+                                <div><label for="">Tên tài khoản(*)</label><i style="color: red"></i></div>
                                 <div class="dialog-input" style="margin-top: 10px">
-                                    <input type="text" name="txtAssetNam">
+                                    <input type="text" name="txtAssetNam" v-model="employee.u_name">
                                 </div>
                             </div>
                         </div>
                         <div class="form-element"  style="margin-top: 15px;">
                             <div class="element-left">
-                                <div><label for="">Giới tính<i style="color: red" v-if="codeDepart">{{messageNull}}</i></label></div>
+                                <div><label for="">Giới tính<i style="color: red"></i></label></div>
                                 <div  class="dialog-input" style="margin-top: 10px">
-                                    <select name="" id="" @change="onChange($event)">
-                                        <option value="" selected>Chọn mã phòng ban</option>
-                                        <option v-for="(department, index) in Departments" :key="index" :value="department.departmentId">{{department.departmentCode}}</option>
+                                    <select name="" id="" v-model="employee.user_gender">
+                                        <option value="" selected>Chọn giới tính</option>
+                                        <option v-for="(gender, index) in genders" :key="index" :value="gender.value">{{gender.gender}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="element-right">
                                 <div><label for="">Số điện thoại</label></div>
                                 <div  class="dialog-input"  style="margin-top: 10px">
-                                    <input type="text" name="">
+                                    <input type="text" name="" v-model="employee.user_phone">
                                 </div>
                             </div>
                         </div>
                         <div class="form-element" style="margin-top: 15px">
                             <div class="element-left">
-                                <div><label for="">Địa chỉ <i style="color: red" v-if="codeType">{{messageNull}}</i></label></div>
+                                <div><label for="">Địa chỉ <i style="color: red"></i></label></div>
                                 <div  class="dialog-input"  style="margin-top: 10px">
-                                    <input type="text" name="txtAssetTypeName">
+                                    <input type="text" name="txtAssetTypeName" v-model="employee.user_address">
                                 </div>
                             </div>
                             <div class="element-right">
                                 <div><label for="">Email</label></div>
                                 <div  class="dialog-input"  style="margin-top: 10px">
-                                    <input type="text" name="txtAssetTypeName">
+                                    <input type="text" name="txtAssetTypeName" v-model="employee.user_email">
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                 <div class="btn-cancel" @click="close">Hủy</div>
                             </div>
                             <div class="footer-form-right">
-                                <div class="btn-add" @click="createAsset()">Lưu</div>
+                                <div class="btn-add" @click="saveEmployee">Lưu</div>
                             </div>
                         </div>
                     </form>
@@ -80,67 +80,89 @@
     </div>
 </template>
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
     props:{
         //Thuộc tính ẩn component
         isHide: Boolean,
-        title: String
+        id: Number,
+        employeeEdit: Object
     },
     name: 'MenuBarLinks',
     components:{
     },
     data() {
         return {
-            codeNull : false,
-            nameNull : false,
-            codeDepart: false,
-            codeType: false,
-            time: false,
-            messageNull : 'không được để trống',
-            Asset:{
-                assetId: '0494ed18-739c-11eb-8a1f-00163e047e89',
-                assetCode: '',
-                assetName: '',
-                assetTypeId: '185f84ed-4563-51a0-cac7-6c0aeb6ec302',
-                departmentId: '3f8e6896-4c7d-15f5-a018-75d8bd200d7c',
-                increaseDate: '',
-                timeUse: 2020,
-                wearRate: 0,
-                originalPrice: 0,
-                wearValue: 0,
-                isUsed: 2,
-                createdDate: '0001-01-01T00:00:00',
-                createdBy: null,
-                modifiedDate: '0001-01-01T00:00:00',
-                modifiedBy: null
-            },
-            Departments:{
-                
-            },
-            AssetTypes:{
-                
-            },
-            res: {
-                data: {
-                    
-                }
-            },
+            message : '',
             validate: false,
-            sucess: false,
-            DepartmentId: '',
-            AssetTypeId: '',
-            DepartmentName: '',
-            AssetTypeName: '',
-            showDialog: false
+            employee:{
+                "user_fullname": '',
+                "user_gender": 1,
+                "user_phone": '',
+                "user_email": '',
+                "user_address": '',
+                "u_name": '',
+                "user_pass": 'abc@1234',
+                "user_type": 2,
+                "user_status": 1,
+                "user_img": ""
+            },
+            genders:[
+                {
+                    gender: 'Nam',
+                    value: 1
+                },
+                {
+                    gender: 'Nữ',
+                    value: 2
+                }
+            ],
+            res:false
         }
     },
     methods: {
         close: function() {
             this.$emit('closeForm')
+        },
+        async create() {
+            await axios.post("https://localhost:44344/api/user",this.employee)
+            .then(response => 
+                    this.res = response.data.sucess
+                )
+            .catch(error => alert(error));
+            if(this.res){
+                this.reloadData();
+                this.$emit('addObject','abc')
+                this.res = !this.res
+            }
+        },
+        onChangeType: function(event){
+            this.employee.gender = event.target.value
+        },
+        async saveEmployee() {
+            this.$store.dispatch("employees/addEmployee", this.employee);
+            this.$store.dispatch("employees/loadData");
+            this.close();
+            this.reloadData();
+        },
+        reloadData(){
+            this.employee.user_fullname = '',
+            this.employee.user_gender = 1,
+            this.employee.user_phone = '',
+            this.employee.user_email = '',
+            this.employee.user_address = '',
+            this.employee.u_name = '',
+            this.employee.user_pass = 'abc@1234',
+            this.employee.user_type = 2
         }
     },
+    computed:{
+        
+    },
+    async created(){
+        
+    }
     
 }
 </script>
@@ -213,7 +235,7 @@ export default {
 .dialog-input{
     border: 1px solid #e0e0e0;
     padding: 5px;
-    height: 34px;
+    height: 25px;
     border-radius: 1px;
 }
 .dialog-input input{
@@ -221,6 +243,14 @@ export default {
     border: none;
     width: 90%;
     margin-left: 5px;
+    font-size: 14px;
+    margin-top: 3px;
+}
+.dialog-input option{
+    margin-left: 5px;
+    font-size: 14px;
+    margin-top: 3px;
+    list-style: none;
 }
     /* Thành phần của form*/
 .form-element{

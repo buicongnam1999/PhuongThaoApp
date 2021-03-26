@@ -12,11 +12,6 @@ namespace PhuongThao.Common.Class
         public int order_id { get; set; }
 
         /// <summary>
-        /// Khóa phụ mã giỏ hàng
-        /// </summary>
-        public int cart_id { get; set; }
-
-        /// <summary>
         /// Ngày tháng thanh toán
         /// </summary>
         public DateTime order_date { get; set; }
@@ -30,5 +25,10 @@ namespace PhuongThao.Common.Class
         /// Khóa phụ người dùng
         /// </summary>
         public int u_id { get; set; }
+
+        /// <summary>
+        /// Trạng thái thanh toán
+        /// </summary>
+        public int order_status { get; set; }
     }
 }

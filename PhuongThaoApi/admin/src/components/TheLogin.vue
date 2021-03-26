@@ -46,19 +46,6 @@ export default {
     },
     computed:{
         checkValidate(){
-            // if(this.account.name == ''){
-
-            //     this.messageName = 'Tài khoản không được để trống'
-                
-            // }else{
-            //     this.messageName = ''
-            // }
-            // if(this.account.pass == ''){
-            //     this.messagePass = 'Mật khẩu không được để trống'
-            // }else{
-            //     this.messagePass = ''
-            // }
-
             if(this.account.name == '' || this.account.pass == ''){
                 return false
             }else{

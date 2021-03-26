@@ -30,10 +30,15 @@ namespace PhuongThao.DataLayer.DataLayer
         public IEnumerable<object> GetAllProduct()
         {
             this._dbConnect = new SqlConnection(this._stringConnect);
-            String sql = "SELECT * FROM tblfood";
+            String sql = "SELECT * FROM tblfood INNER JOIN tblcoupons ON tblfood.cou_id = tblcoupons.cou_id";
             return this._dbConnect.Query<object>(sql, commandType: CommandType.Text);
         }
 
+        /// <summary>
+        /// Thêm mới sản phẩm
+        /// </summary>
+        /// <param name="nf">Sản phẩm mới</param>
+        /// <returns>Số lượng thực thi sản phẩm</returns>
         public int InsertFood(Food nf)
         {
             this._dbConnect = new SqlConnection(this._stringConnect);
@@ -57,6 +62,12 @@ namespace PhuongThao.DataLayer.DataLayer
             return result;
         }
 
+
+        /// <summary>
+        /// Chỉnh sửa thông tin sản phẩm
+        /// </summary>
+        /// <param name="f">Sản phẩm</param>
+        /// <returns>Số lượng thực thi</returns>
         public int UpdateFood(Food f)
         {
             this._dbConnect = new SqlConnection(this._stringConnect);
@@ -81,6 +92,11 @@ namespace PhuongThao.DataLayer.DataLayer
         }
 
 
+        /// <summary>
+        /// Xóa sản phẩm theo mã sản phẩm
+        /// </summary>
+        /// <param name="id">ID ssanr phẩm</param>
+        /// <returns></returns>
         public int DeleteFood(int id)
         {
             String sql = "DELETE FROM tblfood WHERE food_id = " + id;
@@ -92,7 +108,11 @@ namespace PhuongThao.DataLayer.DataLayer
 
         }
 
-
+        /// <summary>
+        /// Kiểm tra mã sản phẩm
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public Boolean CheckFoodCode(String code)
         {
             this._dbConnect = new SqlConnection(_stringConnect);
@@ -108,6 +128,19 @@ namespace PhuongThao.DataLayer.DataLayer
             {
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Lấy sản phẩm theo ID
+        /// </summary>
+        /// <param name="id">ID sản phẩm</param>
+        /// <returns>Đối tượng sản phẩm cần tìm</returns>
+        public object GetFoodById(int id)
+        {
+            this._dbConnect = new SqlConnection(this._stringConnect);
+            String sql = "SELECT * FROM tblfood WHERE food_id = "+id;
+            var res = this._dbConnect.Query<object>(sql, commandType: CommandType.Text);
+            return res;
         }
         #endregion
 

@@ -5,6 +5,7 @@
             <input-search />
             <button-refresh />
         </div>
+        <order-table />
     </div>
 </template>
 
@@ -12,13 +13,15 @@
 import HeaderBasic from "../../components/basic/HeaderBasic.vue"
 import ButtonRefresh from '../../components/basic/ButtonRefresh.vue'
 import InputSearch from '../../components/basic/InputSearch.vue'
+import OrderTable from '../../components/order/OrderTable.vue'
 
 export default 
 {
     components: { 
         HeaderBasic,
         InputSearch,
-        ButtonRefresh 
+        ButtonRefresh,
+        OrderTable 
     },
 }
 </script>

@@ -3,11 +3,11 @@
         <table>
             <tr>
                 <th class="center" colspan="1">STT</th>
-                <th class="left" colspan="1">Tên sản phẩm</th>
-                <th class="right" colspan="1">Giá</th>
-                <th class="right" colspan="1">Số lượng</th>
+                <th class="left" colspan="1">Mã sản phẩm</th>
+                <th class="center" colspan="1">Tên sản phẩm</th>
                 <th class="left" colspan="1">Kiểu sản phẩm</th>
-                <th class="center" colspan="1">Hình ảnh</th>
+                <th class="right" colspan="1">Số lượng</th>
+                <th class="right" colspan="1">Giá</th>
                 <th class="right" colspan="1">Chức năng</th>
             </tr>
         </table>
@@ -19,13 +19,13 @@
                                 {{index+1}}
                             </td>
                             <td rowspan="1" colspan="1" class="left">
-                                {{food.food_name}}
+                                {{food.food_code}}
                             </td>
-                            <td class="right" rowspan="1" colspan="1">{{food.food_money}}</td>
-                            <td rowspan="1" colspan="1" class="right">{{food.food_quality}}</td>
+                            <td class="center" rowspan="1" colspan="1">{{food.food_name}}</td>
                             <td rowspan="1" colspan="1" class="left" v-if="food.food_type == 1">Bánh kẹo</td>
                             <td rowspan="1" colspan="1" class="left" v-else>Hoa quả</td>
-                            <td rowspan="1" colspan="1" class="right">20.000.000</td>
+                            <td rowspan="1" colspan="1" class="right">{{food.food_quality}}</td>
+                            <td rowspan="1" colspan="1" class="right">{{food.food_money}}</td>
                             <td rowspan="1" colspan="1" class="right">
                                 <div class="function">
                                     <div class="function-edit">

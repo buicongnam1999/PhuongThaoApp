@@ -61,6 +61,15 @@ namespace PhuongThaoApi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Xóa thất bại.
+        /// </summary>
+        public static string DeleteFail {
+            get {
+                return ResourceManager.GetString("DeleteFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mã bị trùng.
         /// </summary>
         public static string DuplicateCode {
@@ -97,6 +106,15 @@ namespace PhuongThaoApi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm thất bại.
+        /// </summary>
+        public static string InsertFail {
+            get {
+                return ResourceManager.GetString("InsertFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thất bại.
         /// </summary>
         public static string SucessFail {
@@ -111,6 +129,15 @@ namespace PhuongThaoApi.Properties {
         public static string SucessTrue {
             get {
                 return ResourceManager.GetString("SucessTrue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cập nhật thất bại.
+        /// </summary>
+        public static string UpdateFail {
+            get {
+                return ResourceManager.GetString("UpdateFail", resourceCulture);
             }
         }
     }

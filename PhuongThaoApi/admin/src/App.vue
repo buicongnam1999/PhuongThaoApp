@@ -3,24 +3,24 @@
        <the-header @Logout="Logout"/>
        <the-side-bar />
        <the-content />
-       <the-login :isHide="isHide" @CloseForm="CloseLogin"/>
+       <!-- <the-login :isHide="isHide" @CloseForm="CloseLogin"/> -->
     </div>
 </template>
 <script>
 import TheSideBar from './components/side-bar/TheSideBar.vue'
 import TheContent from './components/TheContent.vue'
 import TheHeader from './components/TheHeader'
-import TheLogin from './components/TheLogin.vue'
+// import TheLogin from './components/TheLogin.vue'
 export default {
   components:{
     TheHeader,
     TheContent,
     TheSideBar,
-    TheLogin
+    // TheLogin
   },
   data() {
     return {
-       isHide: false
+      //  isHide: false
     }
   },
   methods: {

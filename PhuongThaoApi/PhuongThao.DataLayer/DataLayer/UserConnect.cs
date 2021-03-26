@@ -23,6 +23,11 @@ namespace PhuongThao.DataLayer.DataLayer
             _dbConnect = new SqlConnection(_stringConnect);
         }
 
+        /// <summary>
+        /// Kiểm tra email người dùng
+        /// </summary>
+        /// <param name="email">Email truyền vào</param>
+        /// <returns></returns>
         public bool CheckUserEmail(string email)
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -40,6 +45,12 @@ namespace PhuongThao.DataLayer.DataLayer
             }
         }
 
+
+        /// <summary>
+        /// Kiểm tra tài khoản người dùng
+        /// </summary>
+        /// <param name="name">Tài khoản</param>
+        /// <returns>Đúng sai</returns>
         public bool CheckUserName(string name)
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -59,6 +70,11 @@ namespace PhuongThao.DataLayer.DataLayer
         #endregion
 
         #region Method
+        /// <summary>
+        /// Xóa người dùng
+        /// </summary>
+        /// <param name="id">Mã người dùng</param>
+        /// <returns>Số lượng bản ghi thực thi</returns>
         public int Delete(int id)
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -72,6 +88,10 @@ namespace PhuongThao.DataLayer.DataLayer
             return a;
         }
 
+        /// <summary>
+        /// Lấy toàn bộ danh sách khách hàng
+        /// </summary>
+        /// <returns>Lấy toàn bộ danh sách khách hàng</returns>
         public IEnumerable<object> getAllCustomer()
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -82,6 +102,10 @@ namespace PhuongThao.DataLayer.DataLayer
             return a;
         }
 
+        /// <summary>
+        /// Lấy toàn bộ danh sách người dùng
+        /// </summary>
+        /// <returns>Danh sách người dùng</returns>
         public IEnumerable<object> getAllEmployee()
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -92,6 +116,11 @@ namespace PhuongThao.DataLayer.DataLayer
             return a;
         }
 
+
+        /// <summary>
+        /// Lấy toàn bộ danh sách người dùng
+        /// </summary>
+        /// <returns>Danh sách người dùng</returns>
         public IEnumerable<object> GetAllUser()
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -102,6 +131,12 @@ namespace PhuongThao.DataLayer.DataLayer
             return a;
         }
 
+
+        /// <summary>
+        /// Thêm mới người dùng
+        /// </summary>
+        /// <param name="nuser">Người dùng</param>
+        /// <returns>Số lượng bản ghi thực thi</returns>
         public int InsertUser(User nuser)
         {
             _dbConnect = new SqlConnection(_stringConnect);
@@ -149,6 +184,37 @@ namespace PhuongThao.DataLayer.DataLayer
             int result = cmd.ExecuteNonQuery();
             _dbConnect.Close();
             return result;
+        }
+
+        /// <summary>
+        /// Lấy người dùng theo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<Object> GetUserById(int id)
+        {
+            _dbConnect = new SqlConnection(_stringConnect);
+            String sql = "SELECT * FROM tbluser WHERE u_id ="+id;
+            _dbConnect.Open();
+            var a = _dbConnect.Query(sql);
+            _dbConnect.Close();
+            return a;
+        }
+
+        /// <summary>
+        /// Kiểm tra thông tin đăng nhập
+        /// </summary>
+        /// <param name="name">Tài khoản</param>
+        /// <param name="pass">Mật khẩu</param>
+        /// <returns>Đúng hoặc sai</returns>
+        public IEnumerable<object> CheckLoginUser(String name, String pass)
+        {
+            _dbConnect = new SqlConnection(_stringConnect);
+            String sql = "SELECT * FROM tbluser WHERE u_name = '" + name + "' AND user_pass = '" + pass + "' AND user_type = 2";
+            _dbConnect.Open();
+            var user = _dbConnect.Query(sql);
+            _dbConnect.Close();
+            return user;
         }
         #endregion
 

@@ -1,6 +1,6 @@
 <template>
     <div class="button-basic">
-        <i class="fa fa-plus" aria-hidden="true"></i>Add To Cart
+        <slot></slot>
     </div>
 </template>
 <script>

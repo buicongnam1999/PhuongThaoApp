@@ -31,16 +31,6 @@ namespace PhuongThao.Service.Service
 
         }
 
-        /// <summary>
-        /// Hàm lấy dự liệu theo tên
-        /// </summary>
-        /// <param name="name">Tên được truyền vào</param>
-        /// <param name="cmd">Kiểu thực thi truy vấn</param>
-        /// <returns>Danh sách tên tìm kiếm</returns>
-        public Task<IEnumerable<User>> GetUserByName(string name, CommandType cmd = CommandType.Text)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Hàm thêm mới người dùng
@@ -81,28 +71,6 @@ namespace PhuongThao.Service.Service
             return _dbConnection.Delete(id);
         }
 
-        /// <summary>
-        /// Hàm lấy người dùng theo số điện thoại
-        /// </summary>
-        /// <param name="phone">Số điện thoại được truyền vào</param>
-        /// <param name="cmd">Kiểu thực thi</param>
-        /// <returns>Đúng hoặc sai</returns>
-        public Task<bool> GetUserByPhone(string phone, CommandType cmd = CommandType.Text)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Hàm lấy người dùng theo email
-        /// </summary>
-        /// <param name="email">Email được truyền vào</param>
-        /// <param name="cmd">Kiểu thực thi</param>
-        /// <returns>Đúng hoặc sai</returns>
-        /// Create By: NamBC (08/03/21)
-        public Task<bool> GetUserByEmail(string email, CommandType cmd = CommandType.Text)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Kiểm tra tồn tại tài khoản chưa
@@ -147,22 +115,64 @@ namespace PhuongThao.Service.Service
             return _dbConnection.getAllCustomer();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<Object> GetUserById(int id)
+        {
+            return _dbConnection.GetUserById(id);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Object> GetAllData()
         {
             _dbConnection = new UserConnect();
             return _dbConnection.GetAllUser();
         }
 
+        /// <summary>
+        /// Kiểm tra tài khoản và mật khẩu
+        /// </summary>
+        /// <param name="name">Tài khoản được truyền vào</param>
+        /// <param name="pass">Mật khẩu được truyền vào</param>
+        /// <returns>Người dùng</returns>
+        /// Create By: NamBC (21/03/21)
+        public IEnumerable<object> CheckLoginUser(String name, String pass)
+        {
+            _dbConnection = new UserConnect();
+            return _dbConnection.CheckLoginUser(name, pass);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public int InsertObject(User entity)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public int UpdateObject(User entity)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public int DeleteObject(int entity)
         {
             throw new NotImplementedException();

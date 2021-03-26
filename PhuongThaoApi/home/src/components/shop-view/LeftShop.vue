@@ -8,47 +8,25 @@
             <div>
                 <title-left :title="titles[0]"/>
                 <div class="left-border-bottom"></div>
-                    <checkbox-basic> Ice Cream (8)</checkbox-basic>
-                    <checkbox-basic> Cakes (8)</checkbox-basic>
-                    <checkbox-basic> Drinks (8)</checkbox-basic>
-                    <checkbox-basic> Chicken (8)</checkbox-basic>
-                    <checkbox-basic> Fruit (8)</checkbox-basic>
+                    <checkbox-basic> Kem (8)</checkbox-basic>
+                    <checkbox-basic> Bánh ngọt (8)</checkbox-basic>
+                    <checkbox-basic> Nước uống (8)</checkbox-basic>
+                    <checkbox-basic> Đồ ăn vặt (8)</checkbox-basic>
+                    <checkbox-basic> Trái cây (8)</checkbox-basic>
             </div>
             <div>
                 <title-left :title="titles[2]"/>
                 <div class="left-border-bottom"></div>
-                <checkbox-basic>Trên 100.000</checkbox-basic>
-                <checkbox-basic>Trên 200.000</checkbox-basic>
-                <checkbox-basic>Trên 500.000</checkbox-basic>
+                <checkbox-basic> Trên 100.000</checkbox-basic>
+                <checkbox-basic> Trên 200.000</checkbox-basic>
+                <checkbox-basic> Trên 500.000</checkbox-basic>
             </div>
-            <!-- <div>
-                <title-left :title="titles[3]"/>
-                <div class="left-border-bottom"></div>
-                <div class="input-color">
-                <checkbox-basic> White (4)</checkbox-basic>
-                <checkbox-basic> White (4)</checkbox-basic>
-                <checkbox-basic> White (4)</checkbox-basic>
-            </div> -->
-            <!-- <div> -->
-            <!-- <title-left :title="titles[4]"/>
-                <div class="left-border-bottom"></div>
-            </div>
-            <div>
-                <title-left :title="titles[5]"/>
-                <div class="left-border-bottom"></div>
-            </div>
-            <div>
-                <title-left :title="titles[6]"/>
-                <div class="left-border-bottom"></div>
-            </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-
-
-
         </div>
         <div class="left-banner">
+            <marquee width="100%" direction="up" height="500px">
             <img src="../../assets/img/banner/food/Creative-banner-for-social-network.jpg" alt="" srcset="">
+            <img src="../../assets/img/banner/food/banner-2.jpg" alt="" srcset="">
+            </marquee>
         </div>
 
     </div>
@@ -84,7 +62,7 @@ export default {
     background: #f5f5f5;
 }
 .left-banner{
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .left-banner img{
     width: 300px;

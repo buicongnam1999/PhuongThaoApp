@@ -3,58 +3,76 @@
         <slider-view />
         <title-element :title="titles[0].title" :content="titles[0].content"/>
         <div class="product">
-            <div v-for="product in products.slice(0,5)" :key="product.img" class="product-content">
-                <product-element>
-                    <div class="product-element-image">
-                        <img :src="require(`../assets/img/products/food/${product.img}`)" alt="" srcset="">
-                    </div>
-                    <div class="product-element-search" @click="viewProduct(product.img)">
-                        <img src="../assets/icon/search-interface-symbol.svg" alt="">
-                    </div>
-                </product-element>
+            <div v-for="(product_inner,index) in product_inners_best.slice(0,5)" :key="index">
+                <div @click="ShowDetailProduct(product_inner.food_description,product_inner.food_img,product_inner.food_id,product_inner.food_name,product_inner.food_money)">
+                    <product-element :img="product_inner.food_img"/>
+                </div>
                 <div class="product-name">
-                    {{product.name}}
+                    {{product_inner.food_name}}
                 </div>
                 <div class="product-price">
                     <div class="product-price-new">
-                        <b>${{product.Price}}</b>
-                    </div>
-                    <div class="button-base">
-                        <button-base />
+                        <b>{{product_inner.food_money}} VNĐ</b>
+                        <div v-if="product_inner.food_quality === 0">
+                            <div class="button">
+                                <button-base >Hết hàng</button-base>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <div class="button" @click="Addtocart(product_inner.food_id)">
+                                <button-base ><i class="fa fa-plus" aria-hidden="true"></i>Thêm vào giỏ</button-base>
+                            </div>
+                        </div>
                     </div>
                     <div class="product-price-old">
-                        <s>${{product.Priceold}}</s>
+                        <s>{{product_inner.food_money * product_inner.cou_number}}</s>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="product">
-            <div v-for="product in products.slice(5,10)" :key="product.img" class="product-content">
-                <product-element>
-                    <div class="product-element-image">
-                        <img :src="require(`../assets/img/products/food/${product.img}`)" alt="" srcset="">
-                    </div>
-                    <div class="product-element-search"  @click="viewProduct(product.img,product.name)">
-                        <img src="../assets/icon/search-interface-symbol.svg" alt="">
-                    </div>
-                </product-element>
+        <div class="product" style="margin-top:50px;">
+            <div v-for="(product_inner,index) in product_inners_best.slice(5,10)" :key="index">
+                <div @click="ShowDetailProduct(product_inner.food_description,product_inner.food_img,product_inner.food_id,product_inner.food_name,product_inner.food_money)">
+                    <product-element :img="product_inner.food_img"/>
+                </div>
                 <div class="product-name">
-                    {{product.name}}
+                    {{product_inner.food_name}}
                 </div>
                 <div class="product-price">
                     <div class="product-price-new">
-                        <b>${{product.Price}}</b>
-                    </div>
-                    <div class="button-base">
-                        <button-base />
+                        <b>{{product_inner.food_money}} VNĐ</b>
+                        <div v-if="product_inner.food_quality === 0">
+                            <div class="button">
+                                <button-base >Hết hàng</button-base>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <div class="button" @click="Addtocart(product_inner.food_id)">
+                                <button-base><i class="fa fa-plus" aria-hidden="true"></i>Thêm vào giỏ</button-base>
+                            </div>
+                        </div>
                     </div>
                     <div class="product-price-old">
-                        <s>${{product.Priceold}}</s>
+                        <s>{{product_inner.food_money * product_inner.cou_number}}</s>
                     </div>
                 </div>
             </div>
         </div>
-        <product-dialog :image="image" :isHide="isHide" @CloseDialog="CloseDialog" :name="name" :price="50000"/>
+        <product-dialog :image="image" :note="note" :price="price" :name="name" :isHide="isHide" :id="id" @CloseDialog="CloseDialog"/>
+        <pop-up-basic :isHide="isHidePop">
+            <div slot="title">
+                Thông báo
+            </div>
+            <div slot="message">
+                Bạn có muốn thêm vào giỏ hàng?
+            </div>
+            <div slot="button">
+                <div class="button-pop">
+                    <div class="btn-sucess" @click="Ok">Đồng ý</div>
+                    <div class="btn-cancel" @click="Cancel">Hủy bỏ</div>
+                </div>
+            </div>
+        </pop-up-basic>
         <title-element :title="titles[1].title" :content="titles[1].content"/>
         <slider-zoom />
         <div class="category">
@@ -74,13 +92,7 @@
         <div class="categori-content">
             <div class="categori-content-center">
                 <div v-for="(product_inner,index) in product_inners_best" :key="index" class="categori-content-element">
-                    <category-slider :product_name="product_inner.product_name" :product_price="product_inner.price"/>
-                </div>
-                <div v-for="(product_inner,index) in product_inners_feature" :key="index" class="categori-content-element">
-                    <category-slider :product_name="product_inner.product_name" :product_price="product_inner.price"/>
-                </div>
-                <div v-for="(product_inner,index) in product_inners_top" :key="index" class="categori-content-element">
-                    <category-slider :product_name="product_inner.product_name" :product_price="product_inner.price"/>
+                    <category-slider :product_name="product_inner.food_name" :product_price="product_inner.food_money" :img="product_inner.food_img"/>
                 </div>
             </div>
         </div>
@@ -165,14 +177,17 @@
 </template>
 
 <script>
+import axios from "axios";
 import ButtonBase from '../components/base/ButtonBase.vue'
 import BlogPosts from '../components/home-view/BlogPosts.vue'
 import CategorySlider from '../components/home-view/CategorySlider.vue'
-import ProductDialog from '../components/home-view/ProductDialog.vue'
 import ProductElement from '../components/home-view/ProductElement.vue'
 import SliderView from '../components/home-view/SliderView.vue'
 import SliderZoom from '../components/home-view/SliderZoom.vue'
 import TitleElement from '../components/home-view/TitleElement.vue'
+import PopUpBasic from '../components/base/PopUpBasic.vue';
+import ProductDialog from '../components/home-view/ProductDialog.vue';
+import swal from 'sweetalert';
 export default {
     components: { 
         SliderView,
@@ -182,9 +197,10 @@ export default {
         CategorySlider,
         BlogPosts,
         ButtonBase,
-        ProductDialog
+        PopUpBasic,
+        ProductDialog,
     },
-    data() {     
+    data() {  
         return {
             images: [
                 "../../assets/img/banner/food/4-1.jpg",
@@ -192,78 +208,8 @@ export default {
             ],
             count: 5,
             n: 1,
-            products:[
-                {
-                    name: "Neque Porttitor1",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "15.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor2",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "14.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor3",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "3.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor4",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "4.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor5",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "5.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor6",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "6.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor7",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "7.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor8",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "8.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor9",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "9.jpg",
-                    sale: ''
-                },
-                {
-                    name: "Neque Porttitor10",
-                    Price: 3000,
-                    Priceold: 5000,
-                    img: "10.jpg",
-                    sale: ''
-                }
-            ],
+            products:[],
+            foods:[],
             titles:[
                 {
                     title: "Sản phẩm mới",
@@ -321,25 +267,75 @@ export default {
                 }
             ],
             title_inners:[
-                "Best Sellers Products",
-                "Featured Products",
-                "Top Rated Products"
+                "Sản phẩm tốt",
+                "Sản phẩm ưa chuộng",
+                "Top sản phẩm"
             ],
             image: '',
             isHide: true,
             price: 0,
-            name: ''
+            name: '',
+            note: '',
+            isHidePop: true,
+            id: 0,
+            console:{
+                "error": null,
+                "sucess": true,
+                "data": {
+                    "devMessage": null,
+                    "userMessage": ""
+                }
+            }
         }
     },
     methods:{
-        viewProduct: function(img,name){
+        Addtocart(id){
+            this.isHidePop = !this.isHidePop
+            this.id = id
+        },
+        async Ok(){
+            await axios.post("https://localhost:44344/api/cart/1&&"+this.id)
+            .then(res => this.console = res.data)
+            if(this.console.sucess){
+                swal("Thêm thành công", "Cảm ơn bạn đã thêm vào giỏ hàng!","success");
+            }
+            this.id = 0
+            this.isHidePop = !this.isHidePop
+        },
+        Cancel: function(){
+            this.isHidePop = !this.isHidePop
+        },
+        ShowDetail: function(){
+            this.isHide = true
+            alert(this.id)
+        },
+        ShowDetailProduct(note,img,id,name,money){
             this.image = img,
+            this.note = note
+            this.id = id,
             this.name = name,
-            this.isHide = !this.isHide;
+            this.price = money,
+            this.isHide = !this.isHide
         },
         CloseDialog: function(){
-            this.isHide = !this.isHide;
+            this.isHide = !this.isHide
         }
+    },
+    async created(){
+        await axios.get("https://localhost:44344/api/food")
+        .then(res => this.product_inners_best = res.data)
+        await axios.get("https://localhost:44344/api/food")
+        .then(res => this.foods = res.data)
+
+        this.product_inners_best.forEach(element => {
+            var money = element.food_money;
+            if (money) {
+                money =  money.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+            } else {
+                money = 0;  
+            }
+            element.food_money = money;
+        })
     }
     
 }
@@ -360,10 +356,6 @@ export default {
 .product-element-image:hover{
     
 }
-
-
-
-
 /*
 
  */
@@ -374,10 +366,10 @@ export default {
     margin-top: 20px;
     cursor: pointer;
 }
-.button-base{
-    z-index: 3;
+.button{
+    z-index: 5;
     position: relative;
-    top: -3px;
+    top: -2px;
     display: none;
 }
 .product-content:hover .button-base{
@@ -404,6 +396,12 @@ export default {
 }
 .product-price-new:hover, .product-price-old:hover{
     color: red;
+}
+.product-price-new:hover b{
+    display: none;
+}
+.product-price-new:hover .button{
+    display: block;
 }
 .product-price-old{
     margin-left:10px;

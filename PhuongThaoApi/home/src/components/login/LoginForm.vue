@@ -5,21 +5,21 @@
                 <div class="account">
                     <label for="">Tài khoản</label>
                     <div class="form-input">
-                        <input type="text" name="" id="" placeholder="Email">
+                        <input type="text" name="" id="" placeholder="Email" v-model="customer.account">
                     </div>
                     <label for="">{{MessageAccount}}</label>
                 </div>
                 <div class="password">
                     <label for="">Mật khẩu</label>
                     <div class="form-input">
-                        <input type="password" name="" id="" placeholder="Password">
+                        <input type="password" name="" id="" placeholder="Password" v-model="customer.pass">
                     </div>
                     <label for="">{{MessagePass}}</label>
                 </div>
                 <div class="forgot-pass">
                     Quên tài khoản?
                 </div>
-                <div class="btn-login">
+                <div class="btn-login" @click="Login">
                     Đăng nhập
                 </div>
             </form>
@@ -33,7 +33,30 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            MessageAccount: '',
+            MessagePass: '',
+            customer:{
+                account: '',
+                pass: ''
+            }
+        }
+    },
+    methods: {
+        Login: function(){
+            if(this.customer.account === ''){
+                this.MessageAccount = 'Tài khoản để trống'
+            }else{
+                this.MessageAccount = ''
+            }
+            if(this.customer.pass === ''){
+                this.MessagePass = 'Mật khẩu không được phép để trống'
+            }else{
+                this.MessagePass = ''
+            }
+        }
+    },
 }
 </script>
 <style scoped>

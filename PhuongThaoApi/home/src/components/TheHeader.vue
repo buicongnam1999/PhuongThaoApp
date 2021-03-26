@@ -74,6 +74,11 @@
                 <div class="header-menu-cart">
                     <router-link to="cart">
                         <img src="../assets/icon/shopping-cart.svg" alt="" srcset="">
+                        <div class="count">
+                            <div>
+                                {{count}}
+                            </div>
+                        </div>
                     </router-link>
                 </div>
             </div>
@@ -82,8 +87,22 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    
+    data() {
+        return {
+            count: 0
+        }
+    },
+    methods: {
+        openSearch(){
+            console.log("a")
+        }
+    },
+    async created() {
+        await axios.get("https://localhost:44344/api/cart/count/1")
+        .then(res => this.count = res.data)
+    },
 }
 </script>
 
@@ -244,50 +263,6 @@ export default {
     top: -26px;
     cursor: pointer;
 }
-/* .language img{
-    height: 11px;
-    padding-top: 15px;
-    margin: 0px 5px 0px 20px;
-}
-.language i{
-    font-size: 18px;
-    line-height: 40px;
-    margin-left: 3px;
-}
-.language:hover{
-    color: red;
-    cursor: pointer;
-}
-.language:hover .language-dropdown{
-    visibility: visible;
-    opacity: 1;
-}
-
-.language-dropdown{
-    position: absolute;
-    z-index: 1;
-    right: 37px;
-    visibility: hidden; 
-    top: 50px;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-}
-.language-dropdown ul li{
-    list-style: none;
-    color: black;
-    width: 180px;
-    z-index: 1;
-}
-.language-dropdown ul li:hover{
-    color: red;
-    background: #f5f5f5;
-}
-
-.language-dropdown-content , .setting-dropdown-content{
-    margin-top: 10px;
-    border: 1px ridge;
-} */
-
 /*
 --------------------HEADER-MENU--------------------
 */
@@ -315,10 +290,6 @@ export default {
     text-decoration: none;
     color: black;
 }
-/* .header-menu-left a:hover{
-    color: red;
-    opacity: 0.9;
-} */
 .menu-content-down,.menu-content-element{
     cursor: pointer;
 }
@@ -364,12 +335,26 @@ export default {
     line-height: 86px;
     margin-right: 30px;
 }
+.header-menu-cart{
+    display: flex;
+    width: 100px;
+}
 .header-menu-search img, .header-menu-cart img{
     height: 25px;
     width: 25px;
     padding-right: 20px;
     opacity: 0.8;
     cursor: pointer;
+}
+.header-menu-cart a{
+    text-decoration: none;
+}
+.count{
+    padding: 50px 0;
+    height: 25px;
+    z-index: 3;
+    margin-top: -160px; 
+    margin-left: 20px;
 }
 .header-menu-search:hover .input-search{
     display: block;

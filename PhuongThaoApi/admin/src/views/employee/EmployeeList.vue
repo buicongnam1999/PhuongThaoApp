@@ -17,7 +17,6 @@ import ButtonRefresh from '../../components/basic/ButtonRefresh.vue'
 import InputSearch from '../../components/basic/InputSearch.vue'
 import EmployeeTable from '../../components/employee/EmployeeTable.vue'
 import DialogEmployee from '../../components/employee/DialogEmployee.vue'
-import  {mapGetters , mapActions} from 'vuex'
 export default {
   components: { 
     HeaderBasic,
@@ -38,13 +37,10 @@ export default {
         closeForm: function() {
             this.isHide =!this.isHide
         },
-        ...mapActions("employee",{loadEmployee: "loadEmployee"})
     },
     computed:{
-        ...mapGetters("employee",{employee: "getEmployee"})
     },
     created(){
-        this.loadEmployee();
     }
 
     

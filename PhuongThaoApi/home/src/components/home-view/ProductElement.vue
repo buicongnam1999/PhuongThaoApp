@@ -1,12 +1,32 @@
 <template>
-    <div class="product-element">
-        <slot></slot>
+    <div class="product-element" @click="OpenDialog">
+        <div class="product-element-image">
+        <img :src="require(`../../assets/img/products/food/${img}`)" alt="" srcset="" width="30px" height="30px">
+        </div>
+        <div class="product-element-search">
+            <img src="../../assets/icon/search-interface-symbol.svg" alt="">
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    props:[""]
+    components:{
+
+    },
+    props:{
+        img: String
+    },
+    data() {
+        return {
+            isHide: false
+        }
+    },
+    methods: {
+        OpenDialog: function(){
+            this.$emit('ShowDetail')
+        }
+    },
 }
 </script>
 
@@ -15,6 +35,7 @@ export default {
     background: #e5e5ee;
     height: 264px;
     width: 218px;
+    /* float: left; */
 }
 .product-element-image img{
     height: 267px;

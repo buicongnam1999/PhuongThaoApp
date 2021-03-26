@@ -22,7 +22,7 @@
                                 <div><label for="">Tên khách hàng(*) <i style="color: red" v-if="codeNull">{{messageNull}}</i></label></div>
                                 <div :class="{res: res}">
                                     <div class="dialog-input" style="margin-top: 10px">
-                                        <input type="text" name="txtAssetCode">
+                                        <input type="text" name="txtCustomerName" v-model="customer.user_fullname">
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                 <div  class="dialog-input" style="margin-top: 10px">
                                     <select name="" id="" @change="onChange($event)">
                                         <option value="" selected>Giới tính</option>
-                                        <option v-for="(department, index) in Departments" :key="index" :value="department.departmentId">{{department.departmentCode}}</option>
+                                        <option v-for="(gender, index) in genders" :key="index" :value="gender.value">{{gender.gender}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -92,47 +92,27 @@ export default {
     },
     data() {
         return {
-            codeNull : false,
-            nameNull : false,
-            codeDepart: false,
-            codeType: false,
-            time: false,
-            messageNull : 'không được để trống',
-            Asset:{
-                assetId: '0494ed18-739c-11eb-8a1f-00163e047e89',
-                assetCode: '',
-                assetName: '',
-                assetTypeId: '185f84ed-4563-51a0-cac7-6c0aeb6ec302',
-                departmentId: '3f8e6896-4c7d-15f5-a018-75d8bd200d7c',
-                increaseDate: '',
-                timeUse: 2020,
-                wearRate: 0,
-                originalPrice: 0,
-                wearValue: 0,
-                isUsed: 2,
-                createdDate: '0001-01-01T00:00:00',
-                createdBy: null,
-                modifiedDate: '0001-01-01T00:00:00',
-                modifiedBy: null
+            customer:{
+                "user_fullname": '',
+                "user_gender": 1,
+                "user_phone": '',
+                "user_email": '',
+                "user_address": '',
+                "user_pass": "abc@1234",
+                "user_type": 1,
+                "user_status": true,
+                "user_img": ""
             },
-            Departments:{
-                
-            },
-            AssetTypes:{
-                
-            },
-            res: {
-                data: {
-                    
+            genders:[
+                {
+                    gender: 'Nam',
+                    value: 1
+                },
+                {
+                    gender: 'Nữ',
+                    value: 2
                 }
-            },
-            validate: false,
-            sucess: false,
-            DepartmentId: '',
-            AssetTypeId: '',
-            DepartmentName: '',
-            AssetTypeName: '',
-            showDialog: false
+            ],
         }
     },
     methods: {

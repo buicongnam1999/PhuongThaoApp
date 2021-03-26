@@ -6,8 +6,8 @@
         <div class="slider-view" v-for="(slider,index) in sliders" :key="index" v-show="visibleSlider === index">
             <img :src="require(`../../assets/img/banner/food/${sliders[index]}`)" alt="" srcset="" width="100%" height="670px">
         </div>
-        <button class="next" @click="next">Next</button>
-        <button class="prev" @click="prev">Prev</button>
+        <button class="next" @click="next">Tiếp theo</button>
+        <button class="prev" @click="prev">Sau</button>
    </div>
 </template>
 

@@ -39,9 +39,14 @@ namespace PhuongThaoApi.Controllers
         {
             _foodService = new FoodService();
             ResultSet rs = new ResultSet();
+
+            // Kiểm tra mã sản phẩm đã tồn tại hay chưa
             if (this._foodService.CheckFoodCode(nf.food_code))
             {
+                // Thực thi thêm mới sản phẩm
                 var res = this._foodService.InsertObject(nf);
+
+                // Nếu đúng hay sai thì đưa ra thông báo cho người dùng
                 if(res > 0)
                 {
                     ErrMsg e = new ErrMsg();
@@ -61,6 +66,7 @@ namespace PhuongThaoApi.Controllers
             }
             else
             {
+                // Nếu tồn tại thì đưa ra thông báo
                 ErrMsg e = new ErrMsg();
                 e.UserMessage = PhuongThaoApi.Properties.Resources.DuplicateUserEmail;
                 rs.Sucess = false;
