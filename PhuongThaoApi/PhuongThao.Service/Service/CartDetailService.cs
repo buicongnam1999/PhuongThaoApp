@@ -76,6 +76,17 @@ namespace PhuongThao.Service.Service
             return _cartdetail.UpdateProductDetail(amount, cart_id, product_id);
         }
 
+        /// <summary>
+        /// Cập nhật chi tiết giỏ hàng khi giảm
+        /// </summary>
+        /// <param name="amount">Số lượng truyền vào</param>
+        /// <param name="cart_id">ID giỏ hàng</param>
+        /// <param name="product_id">ID sản phẩm</param>
+        /// <returns>Số bản ghi thực thi truy vấn</returns>
+        public int UpdateProductReduction(int amount, int cart_id, int product_id)
+        {
+            return this._cartdetail.UpdateProductReduction(amount, cart_id, product_id);
+        }
 
     }
 }

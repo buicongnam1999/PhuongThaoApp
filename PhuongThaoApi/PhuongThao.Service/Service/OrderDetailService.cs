@@ -30,5 +30,6 @@ namespace PhuongThao.Service.Service
         {
             return _orderDetailConnect.InsertOrder(order_id, food_id, quality);
         }
+
     }
 }

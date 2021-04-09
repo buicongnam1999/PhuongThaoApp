@@ -8,11 +8,11 @@
             <div>
                 <title-left :title="titles[0]"/>
                 <div class="left-border-bottom"></div>
-                    <checkbox-basic> Kem (8)</checkbox-basic>
-                    <checkbox-basic> Bánh ngọt (8)</checkbox-basic>
-                    <checkbox-basic> Nước uống (8)</checkbox-basic>
-                    <checkbox-basic> Đồ ăn vặt (8)</checkbox-basic>
-                    <checkbox-basic> Trái cây (8)</checkbox-basic>
+                    <checkbox-basic @click="Icecream"> Kem (8)</checkbox-basic>
+                    <checkbox-basic @click="Cake"> Bánh ngọt (8)</checkbox-basic>
+                    <checkbox-basic @click="Drink"> Nước uống (8)</checkbox-basic>
+                    <checkbox-basic @click="Snack"> Đồ ăn vặt (8)</checkbox-basic>
+                    <checkbox-basic @click="Fruit"> Trái cây (8)</checkbox-basic>
             </div>
             <div>
                 <title-left :title="titles[2]"/>
@@ -51,6 +51,11 @@ export default {
                 "Properties"
             ]
             
+        }
+    },
+    methods: {
+        Icecream: function(){
+            this.$emit('')
         }
     },
 }

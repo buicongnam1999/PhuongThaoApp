@@ -72,5 +72,8 @@ namespace PhuongThao.Service.Service
         {
             return _cartService.CountProduct(user_id);
         }
+
+
+        
     }
 }

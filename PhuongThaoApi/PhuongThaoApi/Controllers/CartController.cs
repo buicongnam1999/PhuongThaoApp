@@ -125,6 +125,52 @@ namespace PhuongThaoApi.Controllers
             return rs;
         }
 
+
+        /// <summary>
+        /// Cập nhật giỏ hàng khi giảm
+        /// </summary>
+        /// <param name="user_id">ID người dùng</param>
+        /// <param name="product_id">ID sản phẩm</param>
+        /// <returns></returns>
+        [HttpDelete("reduction/{user_id}&&{product_id}")]
+        public ResultSet UpdateProductReduction(int user_id, int product_id)
+        {
+            ResultSet rs = new ResultSet();
+            // Kiểm tra xem có tồn tài giỏ hàng người dùng không
+            if(_cartService.GetCartByUserId(user_id) > 0)
+            {
+                // Nếu tồn tại thì lấy ID giỏ hàng
+                int res = _cartDetailService.UpdateProductReduction(1, _cartService.GetCartByUserId(user_id), product_id);
+                // Kiểm tra đã thực thi chưa
+                if (res > 0)
+                {
+                    ErrMsg e = new ErrMsg();
+                    StatusCode(200);
+                    rs.Sucess = true;
+                    e.UserMessage = PhuongThaoApi.Properties.Resources.SucessTrue;
+                    rs.data = e;
+                }
+                else
+                {
+                    ErrMsg e = new ErrMsg();
+                    StatusCode(400);
+                    e.UserMessage = PhuongThaoApi.Properties.Resources.SucessFail;
+                    rs.data = e;
+                }
+            }
+            else
+            {
+                // Nếu chưa đưa ra thông báo cho người dùng
+                ErrMsg e = new ErrMsg();
+                StatusCode(400);
+                e.UserMessage = PhuongThaoApi.Properties.Resources.DuplicateNull;
+                rs.data = e;
+            }
+
+
+            return rs;
+        }
+
         /// <summary>
         /// Thêm mới giỏ hàng
         /// </summary>
@@ -189,6 +235,8 @@ namespace PhuongThaoApi.Controllers
 
             return rs;
         }
+
+
 
     }
 }

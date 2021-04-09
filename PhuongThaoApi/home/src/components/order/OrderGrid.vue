@@ -13,7 +13,7 @@
                     <div class="order-status">
                     <div v-if="order.order_status">
                             <div class="text">
-                                Đang xác nhận
+                                Đang giao hàng
                             </div>
                         </div>
                         <div v-else>Đang giao hàng</div>

@@ -79,6 +79,15 @@ namespace PhuongThaoApi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chưa tồn tại đối tượng với người dùng.
+        /// </summary>
+        public static string DuplicateNull {
+            get {
+                return ResourceManager.GetString("DuplicateNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Địa chỉ Email.
         /// </summary>
         public static string DuplicateUserEmail {

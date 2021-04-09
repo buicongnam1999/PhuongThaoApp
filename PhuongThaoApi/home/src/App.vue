@@ -3,6 +3,11 @@
       <the-header />
       <the-content />
       <the-footer />
+      <chat-window
+        :current-user-id="currentUserId"
+        :rooms="rooms"
+        :messages="messages"
+      />
   </div>
 </template>
 
@@ -10,12 +15,22 @@
 import TheContent from './components/TheContent.vue';
 import TheFooter from './components/TheFooter.vue';
 import TheHeader from './components/TheHeader';
+import ChatWindow from 'vue-advanced-chat'
+  import 'vue-advanced-chat/dist/vue-advanced-chat.css'
 export default {
   components:{
     TheHeader,
     TheFooter,
     TheContent,
-  }
+    ChatWindow
+  },
+  data() {
+    return {
+      rooms: [],
+        messages: [],
+        currentUserId: 1234
+    }
+  },
 }
 </script>
 

@@ -27,7 +27,7 @@
                         {{name}}
                     </div>
                     <div class="product-price">
-                        {{price}}
+                        {{price*amount}}
                     </div>
                     <div class="product-note">
                         Miễn Phí Vận Chuyển

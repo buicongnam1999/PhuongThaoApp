@@ -20,10 +20,15 @@ namespace PhuongThao.DataLayer.DataLayer
         /// <returns>Số bản ghi bị xóa</returns>
         public int DeleteProduct(int id ,int product_id)
         {
+            // Khởi tạo kết nối
             this._dbConnect = new SqlConnection(this._stringConnect);
+            // Sql thực hiện
             String sql = "DELETE FROM tblcartdetail WHERE cart_id = " + id + " AND food_id ="+product_id;
+            // Mở kết nối
             _dbConnect.Open();
+            // Thực thi truy vấn
             var res = _dbConnect.Execute(sql);
+            // Đóng kết nối
             _dbConnect.Close();
             return res;
         }
@@ -47,9 +52,13 @@ namespace PhuongThao.DataLayer.DataLayer
         /// Create By: NamBC (18/03/21)
         public int InsertCart(int cart_id, int product_id)
         {
+            // Câu truy vấn
             String sql = "INSERT INTO tblcartdetail(cart_id,food_id,quality,cart_status) VALUES("+cart_id+","+product_id+",1,1)";
+            // Mở kết nối
             _dbConnect.Open();
+            // Thực thi truy vấn
             var res = _dbConnect.Execute(sql);
+            // Đóng kết nối
             _dbConnect.Close();
             return res;
         }
@@ -63,9 +72,13 @@ namespace PhuongThao.DataLayer.DataLayer
         /// <returns>Số bản ghi thực thi</returns>
         public int UpdateProduct(int amount , int cart_id, int product_id)
         {
+            // Viết câu truy vấn
             String sql = "UPDATE tblcartdetail SET quality = "+amount+" WHERE food_id ="+product_id+" AND cart_id = "+cart_id;
+            // Mở kết nối
             _dbConnect.Open();
+            // Thực thi truy vấn
             var res = _dbConnect.Execute(sql);
+            // Đóng kết nối
             _dbConnect.Close();
             return res;
         }
@@ -78,8 +91,10 @@ namespace PhuongThao.DataLayer.DataLayer
         /// <returns>Đúng sai</returns>
         public bool CheckProduct(int product_id, int user_id)
         {
+            // Câu lệnh sql
             String sql = "SELECT * FROM tblcart INNER JOIN tblcartdetail ON tblcart.cart_id = tblcartdetail.cart_id " +
                 "INNER JOIN tbluser ON tblcart.u_id = tbluser.u_id WHERE tbluser.u_id = "+ user_id+ " AND tblcartdetail.food_id = "+product_id;
+
             _dbConnect.Open();
             var res = _dbConnect.Query(sql);
             _dbConnect.Close();
@@ -91,7 +106,7 @@ namespace PhuongThao.DataLayer.DataLayer
         }
 
         /// <summary>
-        /// Cập nhật chi tiết chi tiết giỏ hàng
+        /// Cập nhật chi tiết giỏ hàng khi tăng
         /// </summary>
         /// <param name="amount">Số lượng sản phẩm</param>
         /// <param name="cart_id">ID giỏ hàng</param>
@@ -106,8 +121,35 @@ namespace PhuongThao.DataLayer.DataLayer
             return res;
         }
 
-        /*public int */
+        /// <summary>
+        /// Cập nhật chi tiết giỏ hàng khi giảm
+        /// </summary>
+        /// <param name="amount">Số lượng truyền vào</param>
+        /// <param name="cart_id">ID giỏ hàng</param>
+        /// <param name="product_id">ID sản phẩm</param>
+        /// <returns>Số bản ghi thực thi truy vấn</returns>
+        public int UpdateProductReduction(int amount, int cart_id, int product_id)
+        {
+            String sql = "UPDATE tblcartdetail SET quality = quality -" + amount + "  WHERE food_id =" + product_id + " AND cart_id = " + cart_id;
+            _dbConnect.Open();
+            var res = _dbConnect.Execute(sql);
+            _dbConnect.Close();
+            return res;
+        }
 
+        /// <summary>
+        /// Kiểm tra số lượng xem có bằng 1 không
+        /// </summary>
+        /// <param name="cart_id">ID giỏ hàng</param>
+        /// <param name="product_id">ID sản phẩm</param>
+        /// <returns></returns>
+        /*public int CheckAmountProduct(int cart_id, int product_id)
+        {
+            // Khởi tạo kết nối
+            this._dbConnect = new SqlConnection(this._stringConnect);
+            // Câu lệnh thực thi
+            String sql = "SELECT "
+        }*/
 
     }
 }

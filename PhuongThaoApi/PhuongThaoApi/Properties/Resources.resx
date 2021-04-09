@@ -123,6 +123,9 @@
   <data name="DuplicateCode" xml:space="preserve">
     <value>Mã bị trùng</value>
   </data>
+  <data name="DuplicateNull" xml:space="preserve">
+    <value>Chưa tồn tại đối tượng với người dùng</value>
+  </data>
   <data name="DuplicateUserEmail" xml:space="preserve">
     <value>Địa chỉ Email</value>
   </data>

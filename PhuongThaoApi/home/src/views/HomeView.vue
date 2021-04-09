@@ -280,7 +280,7 @@ export default {
             id: 0,
             console:{
                 "error": null,
-                "sucess": true,
+                "sucess": false,
                 "data": {
                     "devMessage": null,
                     "userMessage": ""
@@ -289,26 +289,37 @@ export default {
         }
     },
     methods:{
+        // Bật thông báo xác nhận
         Addtocart(id){
             this.isHidePop = !this.isHidePop
+            // Lấy giá trị ID của sản phẩm
             this.id = id
         },
+        // Xác nhận thêm vào giỏ hàng
         async Ok(){
+            // Gửi xác thực lên serve
             await axios.post("https://localhost:44344/api/cart/1&&"+this.id)
             .then(res => this.console = res.data)
             if(this.console.sucess){
+                // Đưa ra thông báo nếu thành công
                 swal("Thêm thành công", "Cảm ơn bạn đã thêm vào giỏ hàng!","success");
             }
+            // Trả về giá trị ID ban đầu
             this.id = 0
+            // Đóng thông báo
             this.isHidePop = !this.isHidePop
         },
+        // Hủy xác nhận thêm vào giỏ hàng
         Cancel: function(){
             this.isHidePop = !this.isHidePop
         },
+        // Hiển thị chi form chi tiết sản phẩm
         ShowDetail: function(){
+            // Mở form chi tiết sản phẩm
             this.isHide = true
             alert(this.id)
         },
+        // Gán giá trị cho form chi tiết sản phẩm đó
         ShowDetailProduct(note,img,id,name,money){
             this.image = img,
             this.note = note
@@ -317,16 +328,21 @@ export default {
             this.price = money,
             this.isHide = !this.isHide
         },
+        // Đóng form chi tiết sản phẩm
         CloseDialog: function(){
             this.isHide = !this.isHide
         }
     },
+
+    // Khởi tạo ban đầu để lấy giá trị
     async created(){
+        // Khởi tạo giá trị ban đầu
         await axios.get("https://localhost:44344/api/food")
         .then(res => this.product_inners_best = res.data)
         await axios.get("https://localhost:44344/api/food")
         .then(res => this.foods = res.data)
 
+        //Format tiền
         this.product_inners_best.forEach(element => {
             var money = element.food_money;
             if (money) {

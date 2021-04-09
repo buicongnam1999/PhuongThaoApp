@@ -17,7 +17,7 @@
                 <td class="center" colspan="1">{{cart.food_money}}</td>
                 <td class="center" colspan="1">
                     <div class="product-amount">
-                        <button @click="reduction(index)">-</button>
+                        <button @click="reduction(index,cart.food_id)">-</button>
                         <input type="number" :value="cart.quality">
                         <button @click="increase(index,cart.food_id)">+</button>
                     </div>
@@ -148,9 +148,10 @@ export default {
             this.isHidePop = !this.isHidePop
             this.id = id
         },
-        reduction: function(index){
+        async reduction(index,id){
             if(this.carts[index].quality != 0){
-                this.carts[index].quality --
+                this.carts[index].quality --,
+                await axios.delete("https://localhost:44344/api/cart/reduction/1&&"+id)
             }
         },
         async increase(index,id){
