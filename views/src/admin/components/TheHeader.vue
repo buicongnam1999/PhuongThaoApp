@@ -1,365 +1,177 @@
 <template>
     <div class="header">
-        <div class="header-top">
-            <div class="header-top-info">
-                <div class="phone">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    0387200938
-                    </div>
-                <div class="email">
-                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
-                    Buicongnam@gmail.com
-                </div>
+        <div class="header-logo">
+            <div class="header-logo-image">
+                <img src="../../assets/img/logo/logo.png" alt="" srcset="">
             </div>
-            <div class="header-top-logo">
-                <router-link to="/"><img src="../assets/img/logo/logo.png" alt=""></router-link>
+            <div class="header-log-text">
+                <b>PHUONG THAO</b>
             </div>
-            <div class="header-top-setting">
-                <div class="setting">
-                    Cài đặt
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    <div class="setting-dropdown">
-                        <div class="setting-dropdown-content">
-                            <ul>
-                                <li>Tài khoản</li>
-                                <div style="border-top: 1px ridge;"></div>
-                                <li>
-                                    <router-link to="login">Đăng nhập</router-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="header-logo-icon">
+                <img src="../../assets/icon/common.svg" alt="" srcset="">
             </div>
         </div>
-        <div class="header-menu">
-            <div class="header-menu-left">
-                <router-link class="menu-content-element" to="/">
-                    Trang chủ
-                </router-link>
-                <router-link class="menu-content-element"  to="shopview">
-                    Cửa hàng
-                </router-link>
-                <div class="menu-content-down">
-                    Sản phẩm
-                    <div class="menu-drop-down">
-                        <ul>
-                            <li><router-link to="shopview">Đồ ăn nhanh</router-link></li>
-                            <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Gà</router-link></li>
-                            <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Đồ uống</router-link></li>
-                            <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Hoa quả</router-link></li>
-                            <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Bánh ngọt</router-link></li>
-                        </ul>
-                    </div>
-                </div>
-                <router-link class="menu-content-element" to="blog">
-                    Bài viết
-                </router-link>
-                <div class="menu-content-element">
-                    Liên hệ
-                </div>
+        <div class="header-info">
+            <div class="header-info-left">
+                PHUONG THAO SHOP
             </div>
-            <div class="header-menu-right">
-                <div class="header-menu-search" @click="openSearch">
-                    <img src="../assets/icon/search-interface-symbol.svg" alt="" srcset="">
-                        <div class="input-search">
-                        <input type="text" name="" id="" placeholder="Tìm kiếm...">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+            <div class="header-info-right">
+                <div class="help">
+                    <img src="../../assets/icon/help.svg" alt="" srcset="">
+                </div>
+                <div class="border-setting">
+                </div>
+                <div class="info-image">
+                    <img src="../../assets/icon/batman_hero_avatar_comics-512.webp" alt="" srcset="">
+                    <div class="info-user">
+                        Bùi Công Nam
                     </div>
                 </div>
-                <div class="header-menu-cart">
-                    <router-link to="cart">
-                        <img src="../assets/icon/shopping-cart.svg" alt="" srcset="">
-                        <div class="count">
-                            <div>
-                                {{count}}
-                            </div>
-                        </div>
-                    </router-link>
+                <div class="info-setting">
+                    <img src="../../assets/icon/i_arrow_up_small.svg" alt="" srcset="" @click="openDialog">
+                    <ul :class="{isHide: isHide}">
+                        <li @click="logOut">Đăng xuất</li>
+                        <div class="border-list"></div>
+                        <li>Thông tin cá nhân</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </template>
-
 <script>
-import axios from 'axios'
 export default {
     data() {
         return {
-            count: 0
-        }
+            isHide: true
+        }   
+    },
+    components:{
+
     },
     methods: {
-        openSearch(){
-            console.log("a")
+        openDialog: function(){
+            this.isHide = !this.isHide;
+        },
+        logOut: function(){
+            this.$router.push({path: '/login'})
         }
-    },
-    async created() {
-        await axios.get("https://localhost:44344/api/cart/count/1")
-        .then(res => this.count = res.data)
     },
 }
 </script>
-
 <style scoped>
-/*----------------------------------------*/
-/* 3.01 Header Top CSS
-/*----------------------------------------*/
 .header{
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 15px 0px;
-}
-
-.header-top {
-    display: flex;
+    height: 70px;
     width: 100%;
-    border-bottom: 1px solid #e5e5ee;
-}
-
-.header-top-info, .header-top-setting{
-    display: flex;
-    width: 40%;
-    padding: 10px 0px;
-}
-
-.phone{
-    height: 40px;
-    width: 100px;
-    line-height: 40px;
     display: flex;
 }
-.phone i{
-    line-height: 42px;
-    font-size: 15px;
-    justify-content: space-between;
-    margin-right:7px;
-    margin-left: 25px;
-}
-.phone:hover{
-    color: red;
-    cursor: pointer;
-}
-
-.email{
-    width: 145px;
-    height: 40px;
-    line-height: 40px;
-    margin-left: 55px;
+.header-logo{
+    background: #019160;
+    width: 20.05%;
     display: flex;
-    font-size: 15px;
-}
-.email i{
-    line-height: 40px;
-    font-size: 15px;
-    margin-right:7px ;
-}
-.email:hover{
-    color: red;
-    cursor: pointer;
 }
 
-.header-top-logo{
-    width: 10%;
-    height: 30px;
+.header-logo-image img{
     margin-left: 10px;
-    text-align: center;
-    margin-top: -15px;
-}
-.header-top-logo img{
-    width: 200px;
-    height: 75px;
-    cursor: pointer;
-}
-
-.header-top-setting{
-    display: flex;
-    width: 45%;
-    padding: 10px 0px;
-    justify-content: flex-end;
-}
-
-.setting, .language{
-    display: flex;
-    line-height: 40px;
-    font-size: 15px;
-}
-.setting i{
-    font-size: 18px;
-    line-height: 40px;
-    margin-left: 3px;
-}
-.setting:hover{
-    color: red;
-    cursor: pointer;
-}
-.setting:hover .setting-dropdown{
-    opacity: 1;
-    visibility: visible;
-}
-.setting-dropdown{
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-}
-
-.setting-dropdown ul li{
-    list-style: none;
-    color: black;
-    width: 170px;
-    padding-left: 20px;
-}
-
-.setting-dropdown ul li:hover{
-    color: red;
-    background: #f5f5f5;
-}
-.setting-dropdown-content a{
-    text-decoration: none;
-    color: black;
-    width: 100%;
-}
-.setting-dropdown-content a:hover{
-    color: red;
-    opacity: 0.8;
-}
-
-.input-search{
-    position: absolute;
-    top: 138px;
-    right: 105px;
-    z-index: 1;
-    -webkit-box-shadow: 2px 2px 11px 0 rgb(0 0 0 / 30%);
-    box-shadow: 3px 2px 11px 0 rgb(0 0 0 / 30%);
-    height: 34px;
-    width: 250px;
-    background: rgba(255,255,255, 0.9);
-    display: none;
-}
-.input-search input{
-    margin-left: 5px;
-    border:none;
-    outline: none;
-    font-size: 15px;
-    height: 28px;
-    position: relative;
-    top: -26px;
-    width: 200px;
-    background: rgba(255,255,255, 0.8);
-    margin: 3px 5px;
-}
-.input-search i{
-    margin-left: 15px;
-    font-size: 15px;
-    position: relative;
-    top: -26px;
-    cursor: pointer;
-}
-/*
---------------------HEADER-MENU--------------------
-*/
-.header-menu{
-    display: flex;
-    height: 86px;
-}
-.header-menu-left, .header-menu-right{
+    height: 40px;
+    width: 40px;
     margin-top: 15px;
 }
-
-/*
------------------MENU-LEFT-------------------
-*/
-.header-menu-left{
-    display: flex;
+.header-log-text{
+    color: white;
+    line-height: 70px;
+    margin-left: 10px;
+    width: 160px;
+    font-family: OpenSans-Sbold;
+    font-weight: bold;
     font-size: 20px;
-    opacity: 0.8;
-    width: 60%;
-    line-height: 86px;
-    padding-left: 300px;
-    justify-content: space-between;
 }
-.header-menu-left a{
-    text-decoration: none;
-    color: black;
+.header-logo-icon img{
+    margin-top: 20px;
+    height: 30px;
+    width: 30px;
 }
-.menu-content-down,.menu-content-element{
-    cursor: pointer;
+.header-info{
+    width: 80%;
+    border-bottom: 1px solid #e5e5ee;
+    display: flex;
 }
-.menu-content-element:hover{
-    color: red;
+.header-info-left{
+    line-height: 70px;
+    margin-left: 20px;
+    font-family: OpenSans-Sbold;
+    justify-content: flex-end;
+    width: 50%;
 }
-.menu-content-down:hover .menu-drop-down{
-    display: block;
-}
-
-.menu-drop-down{
-    display: none;
-    height: 202px;
-    justify-content: none;
-}
-.menu-drop-down ul{
-    justify-content: none;
-    background: rgba(240,248,255, 0.8);
-    width: 180px;
-    border-left: 5px solid #01b075;
-    cursor: pointer;
-    height: 202px;
-    display: block;
-    position: absolute;
-    margin-top: -25px;
-    margin-left: -10px;
-    z-index: 5;
-}
- .menu-drop-down ul li{
-    list-style: none;
-    line-height: 40px;
-    padding-left: 10px;
-}
-.menu-drop-down ul li:hover{
-    background: rgba(245,245,245, 0.8);
-    color: red;
-}
-
-.header-menu-right{
-    width: 45%;
+.header-info-right{
+    width: 50%;
     display: flex;
     justify-content: flex-end;
-    line-height: 86px;
-    margin-right: 30px;
-}
-.header-menu-cart{
-    display: flex;
-    width: 100px;
-}
-.header-menu-search img, .header-menu-cart img{
-    height: 25px;
-    width: 25px;
     padding-right: 20px;
-    opacity: 0.8;
+    line-height: 70px;
+}
+.info-image{
+    display: flex;
+    font-size: 14px;
+    line-height: 75px;
+    margin-right: 10px;
+}
+.info-image img{
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    margin-right: 10px;
     cursor: pointer;
 }
-.header-menu-cart a{
-    text-decoration: none;
-}
-.count{
-    padding: 50px 0;
+.border-setting{
+    margin-top: 22.5px;
+    border-right: 2px solid #e5e5ee;
     height: 25px;
-    z-index: 3;
-    margin-top: -160px; 
-    margin-left: 20px;
+    margin-right: 10px;
 }
-.header-menu-search:hover .input-search{
-    display: block;
+.help{
+    margin-top: 5px;
+    margin-right: 15px;
 }
-.border-bottom{
-    border-bottom: 1px solid #e5e5ee;
+.info-setting img{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.info-setting{
+    height: 0px;
+    width: 0px;
+}
+.info-setting ul{
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    width: 90px;
+    right: 0px;
+    top: 25px;
+    height: 50px;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    background: white;
+}
+.info-setting ul li{
+    list-style: none;
+    font-size: 13px;
+    color: black;
+    height: 25px;
+    line-height: 30px;
+    margin-left: -30px;
+    cursor: pointer;
+}
+.info-setting ul li:active{
+    color: red;
+    opacity: 0.8;
+}
+.isHide{
+    display: none;
+}
+.border-list{
+    border-top: 1px solid #e5e5e5;
+    width: 150px;
+    margin-left: -40px;
 }
 </style>

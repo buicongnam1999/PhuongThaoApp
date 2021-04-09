@@ -1,16 +1,18 @@
 <template>
     <div>
         <the-header></the-header>
-        <the-footer></the-footer>
+        <router-view></router-view>
+
     </div>
 </template>
 
 <script>
-import TheHeader from '../components/TheHeader.vue'
-import TheFooter from '../components/TheFootervue'
+import TheHeader from '../components/TheHeader'
+
 export default {
-    TheHeader,
-    TheFooter
+    components:{
+        TheHeader
+    }
 }
 </script>
 

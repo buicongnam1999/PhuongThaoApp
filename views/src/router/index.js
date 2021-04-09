@@ -49,8 +49,19 @@ const routes = [
         ]
     },
     {
-      path: "/admin"
-    }
+      path: "/admin",
+      name: "Admin",
+      component: ()=>
+        import(/* */"../admin/container/AdminContainer.vue"),
+      children:[
+        {
+          path: "/",
+          name: "Account",
+          component: () =>
+            import(/* webpackChunkName: "Account" */ "../admin/views/account/AccountList.vue")
+        },
+      ]
+  },
 ]
 
 const router = new VueRouter({
