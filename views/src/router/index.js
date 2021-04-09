@@ -9,8 +9,13 @@ const routes = [
         name: "home",
         component: ()=>
           import(/* */"../container/HomeContainer.vue"),
-        
         children:[
+            {
+                path: "/",
+                name: "Home",
+                component: () =>
+                  import(/* webpackChunkName: "Home" */ "../views/home/HomeView.vue")
+            },
             {
                 path: "/blog",
                 name: "Blog",
@@ -24,13 +29,28 @@ const routes = [
                   import(/* webpackChunkName: "Cart" */ "../views/cart/CartView.vue")
             },
             {
-                path: "/",
-                name: "Home",
-                component: () =>
-                  import(/* webpackChunkName: "Home" */ "../views/home/HomeView.vue")
+              path: "/login",
+              name: "Login",
+              component: () =>
+                import(/* webpackChunkName: "Login" */ "../views/login/LoginView.vue")
+            },
+            {
+              path: "/register",
+              name: "Register",
+              component: () =>
+                import(/* webpackChunkName: "Register" */ "../views/register/RegisterView.vue")
+            },
+            {
+              path: "/shop",
+              name: "Shop",
+              component: () =>
+                import(/* webpackChunkName: "Shop" */ "../views/shop/ShopView.vue")
             },
         ]
     },
+    {
+      path: "/admin"
+    }
 ]
 
 const router = new VueRouter({

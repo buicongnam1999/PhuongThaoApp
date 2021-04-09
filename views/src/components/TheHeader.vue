@@ -37,22 +37,22 @@
                 <router-link class="menu-content-element" to="/">
                     Trang chủ
                 </router-link>
-                <router-link class="menu-content-element"  to="shopview">
+                <router-link class="menu-content-element"  to="shop">
                     Cửa hàng
                 </router-link>
                 <div class="menu-content-down">
                     Sản phẩm
                     <div class="menu-drop-down">
                         <ul>
-                            <li><router-link to="shopview">Đồ ăn nhanh</router-link></li>
+                            <li><router-link to="shop">Đồ ăn nhanh</router-link></li>
                             <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Gà</router-link></li>
+                            <li><router-link to="shop">Gà</router-link></li>
                             <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Đồ uống</router-link></li>
+                            <li><router-link to="shop">Đồ uống</router-link></li>
                             <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Hoa quả</router-link></li>
+                            <li><router-link to="shop">Hoa quả</router-link></li>
                             <div class="border-bottom"></div>
-                            <li><router-link to="shopview">Bánh ngọt</router-link></li>
+                            <li><router-link to="shop">Bánh ngọt</router-link></li>
                         </ul>
                     </div>
                 </div>
