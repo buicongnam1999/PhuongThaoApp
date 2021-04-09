@@ -7,11 +7,7 @@ const routes = [
   {
       path: "/",
       components:() =>
-      import("")
-
-  },
-  {
-      path: "/admin"
+      import(/*Home*/"../container/HomeContainer.vue")
   }
 ]
 
