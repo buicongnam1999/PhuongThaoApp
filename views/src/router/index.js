@@ -56,9 +56,15 @@ const routes = [
       children:[
         {
           path: "/",
-          name: "Account",
+          name: "Login",
           component: () =>
-            import(/* webpackChunkName: "Account" */ "../admin/views/account/AccountList.vue")
+            import(/* webpackChunkName: "Account" */ "../admin/views/login/LoginForm.vue")
+        },
+        {
+          path: "/page",
+          name: "Page",
+          component: () =>
+            import(/* webpackChunkName: "Account" */ "../admin/views/login/LoginForm.vue")
         },
       ]
   },

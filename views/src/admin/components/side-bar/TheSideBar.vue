@@ -3,7 +3,7 @@
         <ul>
             <the-side-bar-item v-for="navbar in navbars" 
             :key="navbar.link" v-bind:to="navbar.link">
-                    <img :src="require(`./../../assets/icon/${navbar.img}`)" 
+                    <img :src="require(`./../../../assets/icon/${navbar.img}`)" 
                     alt="" slot="sidebar-icon">
                 {{navbar.name}}
             </the-side-bar-item>
