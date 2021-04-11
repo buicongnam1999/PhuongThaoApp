@@ -69,6 +69,7 @@ export default {
         this.ordersTable = await axios.get("https://localhost:44344/api/order").then(res => this.ordersTable = res.data) 
         this.ordersTable.forEach(element => {
             var m = new Date(element.order_date);
+            
             var dateString =
                 m.getUTCFullYear() + "-" +
                 ("0" + (m.getUTCMonth()+1)).slice(-2) + "-" +
