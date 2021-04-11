@@ -24,7 +24,7 @@
                         <td class="center" rowspan="1" colspan="1">{{order.user_fullname}}</td>
                         <td rowspan="1" colspan="1" class="left">{{order.order_date}}</td>
                         <td rowspan="1" colspan="1" class="left">{{order.user_phone}}</td>
-                        <td rowspan="1" colspan="1" class="left">{{order.food_money * order.food_quality}}</td>
+                        <td rowspan="1" colspan="1" class="left">{{order.food_money}}</td>
                         <td rowspan="1" colspan="2" class="right" v-if="order.user_gender">
                             <div class="function">
                                 <div class="btn-confirm">Xác nhận</div>
@@ -66,22 +66,26 @@ export default {
         ...mapGetters("orders", {orders: "getOrders"}),
     },
     async created(){
-        this.ordersTable = axios.get("https://localhost:44344/api/order").then(res => this.ordersTable = res.data)
-        // this.ordersTable.forEach(element => {
-        //     var d = new Date(element.order_date);
-        //     var dateString =
-        //         d.getUTCFullYear() + "-" +
-        //         ("0" + (d.getUTCMonth()+1)).slice(-2) + "-" +
-        //         ("0" + d.getUTCDate()).slice(-2) + " " +
-        //         ("0" + d.getUTCHours()).slice(-2) + ":" +
-        //         ("0" + d.getUTCMinutes()).slice(-2) + ":" +
-        //         ("0" + d.getUTCSeconds()).slice(-2);
-        //         element.order_date = dateString;
-        //         console.log(element.order_date)
-        // });
+        this.ordersTable = await axios.get("https://localhost:44344/api/order").then(res => this.ordersTable = res.data) 
         this.ordersTable.forEach(element => {
-            console.log(element.order_id)
-        });
+            var m = new Date(element.order_date);
+            var dateString =
+                m.getUTCFullYear() + "-" +
+                ("0" + (m.getUTCMonth()+1)).slice(-2) + "-" +
+                ("0" + m.getUTCDate()).slice(-2) + " " +
+                ("0" + m.getUTCHours()).slice(-2) + ":" +
+                ("0" + m.getUTCMinutes()).slice(-2) + ":" +
+                ("0" + m.getUTCSeconds()).slice(-2)
+                element.order_date = dateString
+
+            var money = element.quality * element.food_money
+            if (money) {
+                    money =  money.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                } else {
+                    money = 0;  
+                }
+                element.food_money = money;
+        })
     },
     methods: {
         ...mapActions("orders", {loadOrders: "loadData"})
@@ -101,9 +105,11 @@ export default {
 }
 .grid table tr th{
     font-size: 12px;
+    width: 100px;
 }
 .grid table tr td{
     font-size: 11px;
+    width: 100px;
     height: 20px;
 }
 .function{
