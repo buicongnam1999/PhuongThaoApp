@@ -21,10 +21,10 @@ namespace PhuongThaoApi.Controllers
         /// </summary>
         /// <param name="id">ID người dùng</param>
         /// <returns></returns>
-        [HttpGet("{id}")]
-        public IEnumerable<object> GetOrderByUser(int id)
+        [HttpGet]
+        public IEnumerable<object> GetOrderByUser()
         {
-            return _orderService.GetOrderByUser(id);
+            return _orderService.GetAllOder();
         }
 
         /// <summary>

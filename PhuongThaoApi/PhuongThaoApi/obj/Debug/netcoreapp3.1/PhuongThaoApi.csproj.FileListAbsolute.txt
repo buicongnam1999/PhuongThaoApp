@@ -76,3 +76,5 @@ C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debu
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.Properties.Resources.resources
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\obj\Debug\netcoreapp3.1\PhuongThaoApi.csproj.GenerateResource.cache
 C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\views\package-lock.json
+C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoApi\PhuongThaoApi\bin\Debug\netcoreapp3.1\views\package.json

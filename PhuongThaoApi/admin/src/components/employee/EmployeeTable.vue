@@ -3,7 +3,7 @@
         <table>
             <tr>
                 <th class="center">STT</th>
-                <th class="left">Họ và tên</th>
+                <th class="left" colspan="1">Họ và tên</th>
                 <th class="center">Giới tính</th>
                 <th class="left">Ngày sinh</th>
                 <th class="left">Điện thoại</th>
@@ -96,7 +96,6 @@ export default {
             // console.log(this.employeeEdit.u_id)
 
             this.$store.dispatch("employees/getEmployeeById",id);
-            // this.loadEmployeeById();
             console.log(this.employee);
             this.isHide = !this.isHide
         },

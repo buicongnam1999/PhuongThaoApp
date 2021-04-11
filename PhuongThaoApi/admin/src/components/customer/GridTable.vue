@@ -25,7 +25,7 @@
                             <td rowspan="1" colspan="1" class="left">
                                 {{customer.user_fullname}}
                             </td>
-                            <td class="center" rowspan="1" colspan="1" v-if="customer.gender">Nam</td>
+                            <td class="center" rowspan="1" colspan="1" v-if="customer.user_gender">Nam</td>
                             <td class="center" rowspan="1" colspan="1" v-else>Nữ</td>
                             <td rowspan="1" colspan="1" class="left">{{customer.user_phone}}</td>
                             <td rowspan="1" colspan="1" class="left">{{customer.user_phone}}</td>

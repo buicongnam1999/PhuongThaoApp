@@ -34,7 +34,7 @@ namespace PhuongThao.DataLayer.DataLayer
         /// <returns>Danh sách thanh toán</returns>
         public IEnumerable<object> GetAllOder()
         {
-            String sql = "SELECT * FROM tblorder INNER JOIN tblorderdetail ON tblorder.order_id = tblorderdetail.order_id";
+            String sql = "SELECT * FROM tblorder LEFT JOIN tbluser ON tblorder.u_id = tbluser.u_id LEFT JOIN tblorderdetail ON tblorder.order_id = tblorderdetail.order_id INNER JOIN tblfood ON tblorderdetail.food_id = tblfood.food_id";
             this._dbConnect = new SqlConnection(this._stringConnect);
             _dbConnect.Open();
             var a = _dbConnect.Query(sql);
@@ -54,6 +54,7 @@ namespace PhuongThao.DataLayer.DataLayer
             _dbConnect.Open();
             var a = _dbConnect.Query(sql);
             _dbConnect.Close();
+
             return a;
         }
 

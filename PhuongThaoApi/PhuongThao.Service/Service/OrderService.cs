@@ -137,5 +137,14 @@ namespace PhuongThao.Service.Service
         {
             return this._orderConnect.GetCartByUserId(id);
         }
+
+        /// <summary>
+        /// Lấy toàn bộ danh sách thanh toán
+        /// </summary>
+        /// <returns>Danh sách thanh toán</returns>
+        public IEnumerable<object> GetAllOder()
+        {
+            return this._orderConnect.GetAllOder();
+        }
     }
 }
