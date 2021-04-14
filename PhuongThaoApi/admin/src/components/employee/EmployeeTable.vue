@@ -1,59 +1,76 @@
 <template>
-    <div class="grid">
-        <table>
-            <tr>
-                <th class="center">STT</th>
-                <th class="left" colspan="1">Họ và tên</th>
-                <th class="center">Giới tính</th>
-                <th class="left">Ngày sinh</th>
-                <th class="left">Điện thoại</th>
-                <th class="left" colspan="2">Email</th>
-                <th class="left">Tài khoản</th>
-                <th class="right">Chức năng</th>
-            </tr>
-        </table>
-        <div class="table__content">
-            <table>
-                <tbody>
-                    <tr v-for="(employee,index) in employees" :key="index">
-                        <td rowspan="1" colspan="1" class="center">
-                            {{index+1}}
-                        </td>
-                        <td rowspan="1" colspan="1" class="left">
-                            {{employee.user_fullname}}
-                        </td>
-                        <td class="center" rowspan="1" colspan="1" v-if="employee.user_gender">Nam</td>
-                        <td class="center" rowspan="1" colspan="1" v-else>Nữ</td>
-                        <td rowspan="1" colspan="1" class="left">20-09-1999</td>
-                        <td rowspan="1" colspan="1" class="left">{{employee.user_phone}}</td>
-                        <td rowspan="1" colspan="2" class="left">{{employee.user_email}}</td>
-                        <td rowspan="1" colspan="1" class="left">{{employee.u_name}}</td>
-                        <td rowspan="1" colspan="1" class="right">
-                            <div class="function">
-                                <div class="function-edit" @click="openForm(employee.u_id)">
-                                    <img src="../../assets/icon/edit.svg" alt="" srcset="">
-                                </div>
-                                <div class="function-delete" @click="deleteEmployee(employee.u_id, index)">
-                                    <img src="../../assets/icon/x.svg" alt="" srcset="">
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div>
+        <div class="employee-header-function">
+           <div class="search">
+            <div class="search-icon">
+                <img src="../../assets/icon/search.png" alt="" srcset="">
+            </div>
+            <div class="search-input">
+                <input type="text" data-toggle="tooltip" title="Không được để trống!" placeholder="Tìm kiếm theo Mã, Tên khác" @keydown="searchEmployee" v-model="search">
+            </div>
         </div>
-        <grid-paging />
-        <dialog-employee :isHide="isHide" :employee="employeeEdit" @closeForm="closeForm" v-on:addObject="addObject($e)"/>
-        <pop-up-basic :isHide="isHidePop">
-            <div slot="title">Thông báo</div>
-            <div slot="message"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Bạn có muốn xóa không?</div>
-            <div slot="button">
-                <div class="button">
-                    <div class="btn-sucess" @click="Ok">Đồng ý</div>
-                    <div class="btn-cancel" @click="Cancel">Hủy bỏ</div>
+           <div class="refresh">
+                <div class="btn-refresh">
+                    <img src="../../assets/icon/refresh.png" alt="" srcset="">
                 </div>
             </div>
-        </pop-up-basic>
+        </div>
+        <div class="grid">
+            <table>
+                <tr>
+                    <th class="center">STT</th>
+                    <th class="left" colspan="1">Họ và tên</th>
+                    <th class="center">Giới tính</th>
+                    <th class="left">Ngày sinh</th>
+                    <th class="left">Điện thoại</th>
+                    <th class="left" colspan="2">Email</th>
+                    <th class="left">Tài khoản</th>
+                    <th class="right">Chức năng</th>
+                </tr>
+            </table>
+            <div class="table__content">
+                <table>
+                    <tbody>
+                        <tr v-for="(employee,index) in employees" :key="index">
+                            <td rowspan="1" colspan="1" class="center">
+                                {{index+1}}
+                            </td>
+                            <td rowspan="1" colspan="1" class="left">
+                                {{employee.user_fullname}}
+                            </td>
+                            <td class="center" rowspan="1" colspan="1" v-if="employee.user_gender">Nam</td>
+                            <td class="center" rowspan="1" colspan="1" v-else>Nữ</td>
+                            <td rowspan="1" colspan="1" class="left">20-09-1999</td>
+                            <td rowspan="1" colspan="1" class="left">{{employee.user_phone}}</td>
+                            <td rowspan="1" colspan="2" class="left">{{employee.user_email}}</td>
+                            <td rowspan="1" colspan="1" class="left">{{employee.u_name}}</td>
+                            <td rowspan="1" colspan="1" class="right">
+                                <div class="function">
+                                    <div class="function-edit" @click="openForm(employee.u_id)">
+                                        <img src="../../assets/icon/edit.svg" alt="" srcset="">
+                                    </div>
+                                    <div class="function-delete" @click="deleteEmployee(employee.u_id, index)">
+                                        <img src="../../assets/icon/x.svg" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <grid-paging />
+            <dialog-employee :isHide="isHide" :employee="employeeEdit" @closeForm="closeForm" v-on:addObject="addObject($e)"/>
+            <pop-up-basic :isHide="isHidePop">
+                <div slot="title">Thông báo</div>
+                <div slot="message"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Bạn có muốn xóa không?</div>
+                <div slot="button">
+                    <div class="button">
+                        <div class="btn-sucess" @click="Ok">Đồng ý</div>
+                        <div class="btn-cancel" @click="Cancel">Hủy bỏ</div>
+                    </div>
+                </div>
+            </pop-up-basic>
+        </div>
     </div>
 </template>
 
@@ -79,7 +96,11 @@ export default {
             id : 0,
             employeeEdit:{
 
-            }
+            },
+            search: "",
+            employeeSearch:[
+
+            ]
         }
     },
     computed:{
@@ -132,8 +153,19 @@ export default {
             this.isHide = e
             // alert(e.user_fullname)
         },
-        ...mapActions("employees", {loadEmployees: "loadData"},{loadEmployeeById: "getEmployeeById"})
-
+        ...mapActions("employees", {loadEmployees: "loadData"},{loadEmployeeById: "getEmployeeById"}),
+        searchEmployee: function(){
+            if(this.search === ''){
+                console.log(this.search)
+            }else{
+                 let index = 0;
+                this.employees.forEach(element => {
+                    this.employeeSearch[index] = element
+                    index++;
+                });
+                console.log(this.employeeSearch)
+            }
+        }
     },
     
 
@@ -182,5 +214,54 @@ export default {
 }
 .left{
     text-align: left;
+}
+.search{
+    margin-left: 16px;
+    border: 1px solid #bbbbbb;
+    width: 250px;
+    height: 40px;
+    border-radius: 4px;
+    color: black;
+    line-height: 44px;
+    display: flex;
+    justify-content: flex-start;
+}
+    .search .search-icon img{
+        margin-left: 16px;
+        justify-content: flex-start;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    .search .search-input input{
+        outline: none;
+        border: none;
+        font-size: 12px;
+        width: 160px;
+        justify-content: flex-end;
+        position: relative;
+        top: -3px;
+    }
+.employee-header-function{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.refresh{
+    width: 10%;
+    justify-content: flex-end;
+}
+.btn-refresh{
+    justify-content: flex-end;
+    padding: 0px 15px;
+    background-color: #fff;
+    border: 1px solid #bbbbbb;
+    height: 40px;
+    line-height: 48px;
+    border-radius: 4px;
+    position: relative;
+    width: 18px;
+    float: right;
+    margin-right: 16px;
+    cursor: pointer;
 }
 </style>

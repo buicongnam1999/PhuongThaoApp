@@ -52,20 +52,21 @@ const routes = [
       path: "/admin",
       name: "Admin",
       component: ()=>
-        import(/* */"../admin/container/AdminContainer.vue"),
+        import(/* Container Admin*/"../admin/container/AdminContainer.vue"),
       children:[
-        {
-          path: "/",
-          name: "Login",
-          component: () =>
-            import(/* webpackChunkName: "Account" */ "../admin/views/login/LoginForm.vue")
-        },
         {
           path: "/page",
           name: "Page",
           component: () =>
             import(/* webpackChunkName: "Account" */ "../admin/views/login/LoginForm.vue")
         },
+        {
+          path: "/",
+          name: "LoginAdmin",
+          component: () =>
+            import(/* webpackChunkName: "Account" */ "../admin/views/login/LoginForm.vue")
+        },
+        
       ]
   },
 ]

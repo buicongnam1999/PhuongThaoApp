@@ -1,28 +1,31 @@
 <template>
-    <div class="paging">
-        <div class="paging-left">
-            <span style="color: #e5e5e5;">Hiển thị</span><b> 01-20/123 </b><span style="color: #e5e5e5;"></span>
-        </div>
-        <div class="paging-center">
-            <div class="paging-center-back">
-                <div class="first-page"><img src="../../assets/icon/btn-firstpage.svg" alt="" srcset=""></div>
-                <div class="prev-page"><img src="../../assets/icon/btn-prev-page.svg" alt=""></div>
+    <div>
+        <div class="paging">
+            <div class="paging-left">
+                <span style="color: #e5e5e5;">Hiển thị</span><b> 01-20/123 </b><span style="color: #e5e5e5;"></span>
             </div>
-            <div class="paging-center-page">
-                <button style="background-color: #019160;">1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
+            <div class="paging-center">
+                <div class="paging-center-back">
+                    <div class="first-page"><img src="../../assets/icon/btn-firstpage.svg" alt="" srcset=""></div>
+                    <div class="prev-page"><img src="../../assets/icon/btn-prev-page.svg" alt=""></div>
+                </div>
+                <div class="paging-center-page">
+                    <button style="background-color: #019160;">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                </div>
+                <div class="paging-center-up">
+                    <div class="next-page"><img src="../../assets/icon/btn-next-page.svg" alt="" srcset=""></div>
+                    <div class="last-page"><img src="../../assets/icon/btn-lastpage.svg" alt="" srcset=""></div>
+                </div>
             </div>
-            <div class="paging-center-up">
-                <div class="next-page"><img src="../../assets/icon/btn-next-page.svg" alt="" srcset=""></div>
-                <div class="last-page"><img src="../../assets/icon/btn-lastpage.svg" alt="" srcset=""></div>
+            <div class="paging-right">
+                <span><b>20&nbsp;</b></span><span style="color: #e5e5e5;">/trang</span>
             </div>
-        </div>
-        <div class="paging-right">
-            <span><b>20&nbsp;</b></span><span style="color: #e5e5e5;">/trang</span>
         </div>
     </div>
+    
 </template>
 
 <script>

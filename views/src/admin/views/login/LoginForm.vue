@@ -71,7 +71,7 @@ export default {
                 await axios.get("https://localhost:44344/api/user/"+this.account.name+"&&"+this.account.pass)
                 .then(res => this.user = res.data)
                 if(this.user.length != 0 ){
-                    this.$router.push({path: '/'})
+                    this.$router.push({path: '/admin/page'})
                 }else{
                     this.message = 'Tài khoản không tồn tại.'
                 }
