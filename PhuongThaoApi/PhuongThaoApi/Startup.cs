@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
@@ -36,7 +37,7 @@ namespace PhuongThaoApi
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.WithOrigins("http://localhost:8080", "http://localhost:8081")
+                                      builder.WithOrigins("http://localhost:8080", "http://localhost:8081", "http://192.168.166.102:8080", "http://192.168.166.102:8081", "http://192.168.166.102:8082", "http://192.168.166.102:8083")
                                       .AllowAnyHeader()
                                       .AllowAnyMethod()
                                       .AllowCredentials();
@@ -45,12 +46,21 @@ namespace PhuongThaoApi
 
             });
 
+            services.AddSwaggerGen();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "PhuongThao API V1");
+            });
+
+            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

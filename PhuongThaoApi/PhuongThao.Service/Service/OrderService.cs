@@ -59,9 +59,9 @@ namespace PhuongThao.Service.Service
         /// </summary>
         /// <param name="id"></param>
         /// <returns>ID thanh toán vừa thêm</returns>
-        public int GetUserOrder(int id)
+        public int GetUserOrderId(int id)
         {
-            return this._orderConnect.GetUserOrder(id);
+            return this._orderConnect.GetUserOrderId(id);
         }
 
         /// <summary>
@@ -145,6 +145,32 @@ namespace PhuongThao.Service.Service
         public IEnumerable<object> GetAllOder()
         {
             return this._orderConnect.GetAllOder();
+        }
+
+        /// <summary>
+        /// Xác nhận thông tin đơn hàng
+        /// </summary>
+        /// <param name="id">ID đơn hàng</param>
+        /// <returns>Số đơn hàng được xác nhận</returns>
+        public int UpdateOrder(int id)
+        {
+            return _orderConnect.UpdateOrder(id);
+        }
+
+
+        /// <summary>
+        /// Lấy email người mua
+        /// </summary>
+        /// <param name="id">ID đơn hàng</param>
+        /// <returns>Email người mua</returns>
+        public String GetEmailUser(int id)
+        {
+            return _orderConnect.GetEmailUser(id);
+        }
+
+        public IEnumerable<object> GetUserOrder(int id)
+        {
+            return _orderConnect.GetUserOrder(id);
         }
     }
 }

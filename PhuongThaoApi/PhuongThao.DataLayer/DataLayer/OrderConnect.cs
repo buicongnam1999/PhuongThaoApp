@@ -34,7 +34,9 @@ namespace PhuongThao.DataLayer.DataLayer
         /// <returns>Danh sách thanh toán</returns>
         public IEnumerable<object> GetAllOder()
         {
-            String sql = "SELECT * FROM tblorder LEFT JOIN tbluser ON tblorder.u_id = tbluser.u_id LEFT JOIN tblorderdetail ON tblorder.order_id = tblorderdetail.order_id INNER JOIN tblfood ON tblorderdetail.food_id = tblfood.food_id";
+            String sql = "SELECT tblorderdetail.order_id,order_date,user_fullname,user_phone,quality,food_money,order_status,tbluser.u_id " +
+                " FROM tblorder LEFT JOIN tbluser ON tblorder.u_id = tbluser.u_id LEFT JOIN tblorderdetail ON tblorder.order_id = tblorderdetail.order_id " +
+                " INNER JOIN tblfood ON tblorderdetail.food_id = tblfood.food_id GROUP BY tblorderdetail.order_id,order_date,user_fullname,user_phone,quality,food_money,order_status,tbluser.u_id";
             this._dbConnect = new SqlConnection(this._stringConnect);
             _dbConnect.Open();
             var a = _dbConnect.Query(sql);
@@ -93,7 +95,7 @@ namespace PhuongThao.DataLayer.DataLayer
         /// </summary>
         /// <param name="id">ID người dùng</param>
         /// <returns>Số thanh toán</returns>
-        public int GetUserOrder(int id)
+        public int GetUserOrderId(int id)
         {
             String sql = "SELECT MAX(order_id) FROM tblorder INNER JOIN tbluser ON tblorder.u_id = tbluser.u_id WHERE tbluser.u_id = "+id;
             SqlCommand cmd = new SqlCommand(sql, this._dbConnect);
@@ -134,8 +136,8 @@ namespace PhuongThao.DataLayer.DataLayer
             int i = 0;
             foreach(CartDetail c in cd)
             {
-                String sql = "INSERT INTO tblorderdetail(order_id,food_id,quality,order_status) " +
-                    "VALUES(" + order_id + "," + c.food_id + "," + c.quality + "," + 1 + ")";
+                String sql = "INSERT INTO tblorderdetail(order_id,food_id,quality) " +
+                    "VALUES(" + order_id + "," + c.food_id + "," + c.quality + ")";
                 _dbConnect.Open();
                 var a = _dbConnect.Execute(sql);
                 _dbConnect.Close();
@@ -234,5 +236,56 @@ namespace PhuongThao.DataLayer.DataLayer
             _dbConnect.Close();
             return a;
         }
+
+        /// <summary>
+        /// Xác nhận thông tin đơn hàng
+        /// </summary>
+        /// <param name="id">ID đơn hàng</param>
+        /// <returns>Số đơn hàng được xác nhận</returns>
+        public int UpdateOrder(int id)
+        {
+            String sql = "UPDATE tblorder SET order_status = 1 WHERE u_id = " + id;
+            _dbConnect.Open();
+            var res = _dbConnect.Execute(sql);
+            _dbConnect.Close();
+            return res;
+        }
+
+        /// <summary>
+        /// Lấy email người mua
+        /// </summary>
+        /// <param name="id">ID đơn hàng</param>
+        /// <returns>Email người mua</returns>
+        public String GetEmailUser(int id)
+        {
+            String sql = "SELECT user_email FROM tbluser WHERE u_id  =" + id;
+            this._dbConnect = new SqlConnection(this._stringConnect);
+            SqlCommand cmd = new SqlCommand(sql, this._dbConnect);
+            String user_email = "";
+            _dbConnect.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                user_email = rd.GetString(0);
+            }
+            _dbConnect.Close();
+            return user_email;
+        }
+
+
+
+        public IEnumerable<object> GetUserOrder(int id)
+        {
+            String sql = "SELECT * FROM tblorder INNER JOIN tblorderdetail ON tblorder.order_id = tblorderdetail.order_id INNER JOIN tbluser ON tblorder.u_id = tbluser.u_id INNER JOIN tblfood ON tblorderdetail.food_id = tblfood.food_id WHERE tbluser.u_id = " + id;
+            this._dbConnect = new SqlConnection(this._stringConnect);
+            _dbConnect.Open();
+            var a = _dbConnect.Query(sql);
+            _dbConnect.Close();
+
+            return a;
+        }
+
+
+
     }
 }

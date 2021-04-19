@@ -177,5 +177,22 @@ namespace PhuongThao.Service.Service
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Xuất dữ liệu ra excel
+        /// </summary>
+        /// <returns>Dữ liệu</returns>
+        public DataTable ExportExcelEmployees()
+        {
+            _dbConnection = new UserConnect();
+            return _dbConnection.ExportExcelEmployees();
+        }
+
+
+        public IEnumerable<User> ExportExcem()
+        {
+            _dbConnection = new UserConnect();
+            return _dbConnection.ExportExcel();
+        }
     }
 }

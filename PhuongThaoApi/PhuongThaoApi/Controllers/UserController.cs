@@ -1,10 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClosedXML.Excel;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
+using OfficeOpenXml;
 using PhuongThao.Common.Class;
 using PhuongThao.Service.Service;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,6 +24,7 @@ namespace PhuongThaoApi.Controllers
     {
         // GET: api/<UserController>
         UserService _userService = new UserService();
+        string fileName = @"Employees.xlsx";
         [HttpGet]
         public IEnumerable Get()
         {
@@ -136,19 +144,28 @@ namespace PhuongThaoApi.Controllers
         /// <param name="u">Người dùng cần cập nhật</param>
         /// <returns>Thông báo</returns>
         [HttpPut]
-        public IActionResult Put(User u)
+        public ResultSet Put(User u)
         {
             // Thực thi cập cập
             var res = _userService.UpdateUser(u);
+            ErrMsg err = new ErrMsg();
+            ResultSet rs = new ResultSet();
             // Nếu đùng
             if (res > 0)
             {
-                return StatusCode(200, PhuongThaoApi.Properties.Resources.SucessTrue);
+
+                rs.Sucess = true;
+                err.UserMessage = PhuongThaoApi.Properties.Resources.SucessTrue;
+                rs.data = err;
+                return rs;
             }
             // Nếu sai
             else
             {
-                return StatusCode(400, PhuongThaoApi.Properties.Resources.UpdateFail);
+                rs.Sucess = false;
+                err.UserMessage = PhuongThaoApi.Properties.Resources.SucessFail;
+                rs.data = err;
+                return rs;
             }
         }
 
@@ -174,6 +191,55 @@ namespace PhuongThaoApi.Controllers
                 return StatusCode(400, PhuongThaoApi.Properties.Resources.UpdateFail);
             }
         }
+
+
+        
+
+        [HttpGet("excel/employee")]
+        public void createFile()
+        {
+            string wwwrootPath = @"C:\Users\Bui Cong Nam\Desktop\PhuongThaoApp\PhuongThaoAPI\PhuongThaoAPI\wwwroot";
+            
+            FileInfo file = new FileInfo(Path.Combine(wwwrootPath, fileName));
+
+            if (file.Exists)
+            {
+                file.Delete();
+                file = new FileInfo(Path.Combine(wwwrootPath, fileName));
+            }
+            using (ExcelPackage package = new ExcelPackage(file))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Nhân viên");
+                DataTable employees = _userService.ExportExcelEmployees();
+                int index = 2;
+                worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 2].Value = "Tên nhân viên";
+                worksheet.Cells[1, 3].Value = "Số điện thoại";
+                worksheet.Cells[1, 4].Value = "Email";
+                worksheet.Cells[1, 5].Value = "Địa chỉ";
+                worksheet.Cells[1, 6].Value = "Lương";
+                foreach (DataRow employee in employees.Rows)
+                {
+                    worksheet.Cells[String.Format("A{0}", index)].Value = employee[0].ToString();
+                    worksheet.Cells[String.Format("B{0}", index)].Value = employee[1].ToString();
+                    worksheet.Cells[String.Format("C{0}", index)].Value = employee[3].ToString();
+                    worksheet.Cells[String.Format("D{0}", index)].Value = employee[4].ToString();
+                    worksheet.Cells[String.Format("E{0}", index)].Value = employee[5].ToString();
+                    worksheet.Cells[String.Format("F{0}", index)].Value = employee[11].ToString();
+                    index++;
+                }
+
+                package.Save();
+                IFileProvider provider = new PhysicalFileProvider(wwwrootPath);
+                IFileInfo fileInfo = provider.GetFileInfo(fileName);
+                var readStream = fileInfo.CreateReadStream();
+                var mimeType = "application/vnd.ms-excel";
+                File(readStream, mimeType, fileName);
+
+            }
+
+        }
+        
 
 
     }

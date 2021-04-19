@@ -267,9 +267,9 @@ export default {
                 }
             ],
             title_inners:[
-                "Sản phẩm tốt",
-                "Sản phẩm ưa chuộng",
-                "Top sản phẩm"
+                "Sản phẩm được quan tâm",
+                "Sản phẩm ưa thích",
+                "Sản phẩm bán chạy"
             ],
             image: '',
             isHide: true,
@@ -438,7 +438,7 @@ export default {
      margin-top: 100px;
  }
  .pro-inner-title{
-    font-size: 25px;
+    font-size: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     margin-top: 5px;

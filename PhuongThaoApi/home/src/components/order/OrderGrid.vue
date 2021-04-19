@@ -16,7 +16,7 @@
                                 Đang giao hàng
                             </div>
                         </div>
-                        <div v-else>Đang giao hàng</div>
+                        <div v-else>Đang chờ xác nhận</div>
                     </div>
                 </div>
                 <div class="product-price">

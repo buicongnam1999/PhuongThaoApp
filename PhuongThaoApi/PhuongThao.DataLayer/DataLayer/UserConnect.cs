@@ -170,16 +170,11 @@ namespace PhuongThao.DataLayer.DataLayer
             _dbConnect = new SqlConnection(_stringConnect);
             SqlCommand cmd = new SqlCommand("Update_User", _dbConnect);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@user_fullname", u.user_fullname);
-            cmd.Parameters.AddWithValue("@user_gender", u.user_gender);
-            cmd.Parameters.AddWithValue("@user_phone", u.user_phone);
-            cmd.Parameters.AddWithValue("@user_email", u.user_email);
-            cmd.Parameters.AddWithValue("@user_address", u.user_address);
-            cmd.Parameters.AddWithValue("@u_name", u.u_name);
-            cmd.Parameters.AddWithValue("@user_pass", u.user_pass);
-            cmd.Parameters.AddWithValue("@user_type", u.user_type);
-            cmd.Parameters.AddWithValue("@user_img", u.user_img);
-            cmd.Parameters.AddWithValue("@u_id",u.u_id);
+            cmd.Parameters.AddWithValue("@salary", u.salary);
+            cmd.Parameters.AddWithValue("@phone", u.user_phone);
+            cmd.Parameters.AddWithValue("@email", u.user_email);
+            cmd.Parameters.AddWithValue("@address", u.user_address);
+            cmd.Parameters.AddWithValue("@id",u.u_id);
             _dbConnect.Open();
             int result = cmd.ExecuteNonQuery();
             _dbConnect.Close();
@@ -215,6 +210,33 @@ namespace PhuongThao.DataLayer.DataLayer
             var user = _dbConnect.Query(sql);
             _dbConnect.Close();
             return user;
+        }
+
+        /// <summary>
+        /// Xuất dữ liệu ra excel
+        /// </summary>
+        /// <returns>Dữ liệu</returns>
+        public DataTable ExportExcelEmployees()
+        {
+            _dbConnect = new SqlConnection(_stringConnect);
+            String sql = "SELECT * FROM tbluser WHERE user_type = 2";
+            SqlCommand com = new SqlCommand(sql, _dbConnect);
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable ds = new DataTable();
+            da.Fill(ds);
+            return ds;
+        }
+
+        public IEnumerable<User> ExportExcel()
+        {
+            _dbConnect = new SqlConnection(_stringConnect);
+            String sql = "SELECT * FROM tbluser WHERE user_type = 2";
+            _dbConnect.Open();
+            IEnumerable<User> list = _dbConnect.Query<User>(sql);
+            _dbConnect.Close();
+            return list;
+
         }
         #endregion
 

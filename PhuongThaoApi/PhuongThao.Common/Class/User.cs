@@ -61,5 +61,10 @@ namespace PhuongThao.Common.Class
         /// Trạng thái người dùng
         /// </summary>
         public int user_status { get; set; }
+
+        /// <summary>
+        /// Lương người dùng
+        /// </summary>
+        public int salary { get; set; }
     }
 }

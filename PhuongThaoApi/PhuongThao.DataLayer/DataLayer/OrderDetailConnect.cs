@@ -43,7 +43,7 @@ namespace PhuongThao.DataLayer.DataLayer
         /// <returns>Số lượng bản ghi thực thi</returns>
         public int InsertOrder(int order_id , int food_id, int quality)
         {
-            String sql = "INSERT INTO tblorderdetail(order_id,food_id,quality,order_status) VALUES(" + order_id + "," + food_id + ","+quality+",1)";
+            String sql = "INSERT INTO tblorderdetail(order_id,food_id,quality) VALUES(" + order_id + "," + food_id + ","+quality+")";
             _dbConnect.Open();
             var res = _dbConnect.Execute(sql);
             _dbConnect.Close();
